@@ -3,12 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>SHENGPENG — Artist</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f6f2;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px;
+      font-size: 14px;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    nav a {
+      margin-left: 28px;
+      color: #111;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      opacity: 0.5;
+    }
+
+    main {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font-size: clamp(56px, 11vw, 150px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+    }
+
+    .intro p {
+      margin-top: 24px;
+      font-size: 15px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 30px 40px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 24px 20px;
+      }
+
+      nav a {
+        margin-left: 14px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      footer {
+        padding: 24px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>SHENGPENG</h1>
-  <p>Artist</p>
+  <header>
+    <div class="logo">SHENGPENG</div>
+
+    <nav>
+      <a href="#">Works</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>SHENGPENG</h1>
+      <p>Artist</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 SHENGPENG
+  </footer>
 
 </body>
 </html>
