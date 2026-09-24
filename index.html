@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +52,14 @@ a {
 
 img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+img:hover {
+    opacity: 0.92;
 }
 
 
@@ -248,20 +253,8 @@ section {
 
     background: var(--placeholder);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
     overflow: hidden;
-}
-
-.hero-image::after {
-    content: "SELECTED WORK";
-
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: #8a867f;
 }
 
 .hero-caption {
@@ -330,15 +323,7 @@ section {
     aspect-ratio: 4 / 5;
 
     background: var(--placeholder);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #8a867f;
-
-    font-size: 10px;
-    letter-spacing: 0.18em;
+    overflow: hidden;
 }
 
 .work-info {
@@ -782,6 +767,8 @@ aria-expanded="false">
 
 
 <div class="hero-image">
+    <!-- 将 images/hero.jpg 替换为你首页主图的实际路径或链接 -->
+    <img src="images/hero.jpg" alt="Selected Work by SHENGPENG SONG">
 </div>
 
 
@@ -857,7 +844,8 @@ Selected Works
 <div class="work-item">
 
 <div class="work-image">
-WORK 01
+    <!-- 替换为你的作品 1 图片路径 -->
+    <img src="images/work-01.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -879,7 +867,8 @@ Oil on canvas
 <div class="work-item">
 
 <div class="work-image">
-WORK 02
+    <!-- 替换为你的作品 2 图片路径 -->
+    <img src="images/work-02.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -901,7 +890,8 @@ Oil on canvas
 <div class="work-item">
 
 <div class="work-image">
-WORK 03
+    <!-- 替换为你的作品 3 图片路径 -->
+    <img src="images/work-03.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -923,7 +913,8 @@ Oil on canvas
 <div class="work-item">
 
 <div class="work-image">
-WORK 04
+    <!-- 替换为你的作品 4 图片路径 -->
+    <img src="images/work-04.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -945,7 +936,8 @@ Oil on canvas
 <div class="work-item">
 
 <div class="work-image">
-WORK 05
+    <!-- 替换为你的作品 5 图片路径 -->
+    <img src="images/work-05.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -967,7 +959,8 @@ Oil on canvas
 <div class="work-item">
 
 <div class="work-image">
-WORK 06
+    <!-- 替换为你的作品 6 图片路径 -->
+    <img src="images/work-06.jpg" alt="Untitled">
 </div>
 
 <div class="work-info">
@@ -1626,4 +1619,3 @@ mobileLinks.forEach(function(link) {
 
 </body>
 </html>
-```
