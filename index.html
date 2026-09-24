@@ -41,7 +41,8 @@ body {
     line-height: 1.6;
 }
 
-body.menu-open {
+body.menu-open,
+body.modal-open {
     overflow: hidden;
 }
 
@@ -55,11 +56,7 @@ img {
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: opacity 0.3s ease;
-}
-
-img:hover {
-    opacity: 0.92;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 
@@ -255,6 +252,11 @@ section {
 
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.hero-image img:hover {
+    transform: scale(1.015);
 }
 
 .hero-caption {
@@ -315,6 +317,7 @@ section {
 
 .work-item {
     display: block;
+    cursor: pointer;
 }
 
 .work-image {
@@ -324,6 +327,11 @@ section {
 
     background: var(--placeholder);
     overflow: hidden;
+}
+
+.work-item:hover .work-image img {
+    transform: scale(1.02);
+    opacity: 0.95;
 }
 
 .work-info {
@@ -342,6 +350,59 @@ section {
 .work-meta {
     font-size: 12px;
     color: var(--muted);
+    text-align: right;
+}
+
+
+/* =========================
+   IMAGE MODAL (LIGHTBOX)
+========================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(251, 250, 247, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 82vh;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.modal-caption {
+    position: absolute;
+    bottom: 30px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-weight: 300;
 }
 
 
@@ -766,9 +827,8 @@ aria-expanded="false">
 <section class="hero">
 
 
-<div class="hero-image">
-    <!-- 将 images/hero.jpg 替换为你首页主图的实际路径或链接 -->
-    <img src="images/hero.jpg" alt="Selected Work by SHENGPENG SONG">
+<div class="hero-image" onclick="openModal('images/hero.jpg', 'SHENGPENG SONG — Selected Work')">
+    <img src="images/hero.jpg" alt="Selected Work by SHENGPENG SONG" loading="lazy">
 </div>
 
 
@@ -841,11 +901,54 @@ Selected Works
 <div class="works-grid">
 
 
-<div class="work-item">
+<div class="work-item" onclick="openModal('images/work-01.jpg', 'Untitled, 2024 — Acrylic on canvas, 50 × 70 cm')">
 
 <div class="work-image">
-    <!-- 替换为你的作品 1 图片路径 -->
-    <img src="images/work-01.jpg" alt="Untitled">
+    <img src="images/work-01.jpg" alt="Untitled" loading="lazy">
+</div>
+
+<div class="work-info">
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>50 × 70 cm
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="work-item" onclick="openModal('images/work-02.jpg', 'Untitled, 2024 — Acrylic on canvas, 50 × 50 cm')">
+
+<div class="work-image">
+    <img src="images/work-02.jpg" alt="Untitled" loading="lazy">
+</div>
+
+<div class="work-info">
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>50 × 50 cm
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="work-item" onclick="openModal('images/work-03.jpg', 'Untitled — Oil on canvas')">
+
+<div class="work-image">
+    <img src="images/work-03.jpg" alt="Untitled" loading="lazy">
 </div>
 
 <div class="work-info">
@@ -864,11 +967,10 @@ Oil on canvas
 
 
 
-<div class="work-item">
+<div class="work-item" onclick="openModal('images/work-04.jpg', 'Untitled — Oil on canvas')">
 
 <div class="work-image">
-    <!-- 替换为你的作品 2 图片路径 -->
-    <img src="images/work-02.jpg" alt="Untitled">
+    <img src="images/work-04.jpg" alt="Untitled" loading="lazy">
 </div>
 
 <div class="work-info">
@@ -887,11 +989,10 @@ Oil on canvas
 
 
 
-<div class="work-item">
+<div class="work-item" onclick="openModal('images/work-05.jpg', 'Untitled — Oil on canvas')">
 
 <div class="work-image">
-    <!-- 替换为你的作品 3 图片路径 -->
-    <img src="images/work-03.jpg" alt="Untitled">
+    <img src="images/work-05.jpg" alt="Untitled" loading="lazy">
 </div>
 
 <div class="work-info">
@@ -910,57 +1011,10 @@ Oil on canvas
 
 
 
-<div class="work-item">
+<div class="work-item" onclick="openModal('images/work-06.jpg', 'Untitled — Oil on canvas')">
 
 <div class="work-image">
-    <!-- 替换为你的作品 4 图片路径 -->
-    <img src="images/work-04.jpg" alt="Untitled">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Untitled
-</div>
-
-<div class="work-meta">
-Oil on canvas
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="work-item">
-
-<div class="work-image">
-    <!-- 替换为你的作品 5 图片路径 -->
-    <img src="images/work-05.jpg" alt="Untitled">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Untitled
-</div>
-
-<div class="work-meta">
-Oil on canvas
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="work-item">
-
-<div class="work-image">
-    <!-- 替换为你的作品 6 图片路径 -->
-    <img src="images/work-06.jpg" alt="Untitled">
+    <img src="images/work-06.jpg" alt="Untitled" loading="lazy">
 </div>
 
 <div class="work-info">
@@ -1178,7 +1232,7 @@ For many years, the human face and figure have been at the centre of my work. I 
 
 
 <p>
-Over time, I began to feel that the figure itself was no longer enough. I became increasingly interested in what exists around and within it — the psychological space between people, the traces of memory, moments of uncertainty, and the quiet changes that take place within us.
+Over time, I became increasingly interested in what exists around and within it — the psychological space between people, the traces of memory, moments of uncertainty, and the quiet changes that take place within us.
 </p>
 
 
@@ -1546,6 +1600,18 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =========================
+     IMAGE MODAL CONTAINER
+========================= -->
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <img class="modal-content" id="modalImg" src="" alt="Full view">
+    <div class="modal-caption" id="modalCaption"></div>
+</div>
+
+
+
+<!-- =========================
      FOOTER
 ========================= -->
 
@@ -1612,6 +1678,33 @@ mobileLinks.forEach(function(link) {
 
     });
 
+});
+
+
+/* =========================
+   IMAGE MODAL (LIGHTBOX)
+========================= */
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const modalCaption = document.getElementById("modalCaption");
+
+function openModal(src, caption) {
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+    modalImg.src = src;
+    modalCaption.textContent = caption || "";
+}
+
+function closeModal() {
+    modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeModal();
+    }
 });
 
 </script>
