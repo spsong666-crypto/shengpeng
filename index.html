@@ -3,959 +3,583 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SHENGPENG SONG — Artist</title>
-<meta name="description" content="SHENGPENG SONG is a Chinese artist based in Germany whose painting practice explores memory, vulnerability, uncertainty, inner experience and transformation through modern abstract aesthetics and Buddhist philosophy.">
+
+<meta name="description" content="SHENGPENG SONG is a Chinese artist based in Germany whose painting practice explores memory, vulnerability, uncertainty, inner experience and transformation.">
 
 <style>
 :root {
-    --bg: #ffffff;
-    --text: #111111;
-    --muted: #777777;
-    --line: #eeeeee;
-    --placeholder: #f7f7f7;
+    --bg: #fbfaf7;
+    --text: #222222;
+    --muted: #77736d;
+    --line: #dedbd5;
+    --placeholder: #e7e4de;
     --max-width: 1440px;
 }
 
+/* =========================
+   RESET
+========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; font-weight: 300; line-height: 1.6; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
 body.menu-open, body.modal-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
+img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s ease; }
 
-img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
+/* =========================
+   HEADER
+========================= */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 76px;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
+    position: fixed; top: 0; left: 0; width: 100%; height: 76px;
+    background: rgba(251,250,247,0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     z-index: 1000;
 }
-
 .header-inner {
-    max-width: var(--max-width);
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 42px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: var(--max-width); height: 100%; margin: 0 auto; padding: 0 42px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-size: 17px; letter-spacing: 0.18em; font-weight: 500; text-transform: uppercase; }
+.desktop-nav { display: flex; gap: 30px; }
+.desktop-nav a { font-size: 12px; letter-spacing: 0.08em; color: #44413d; transition: opacity 0.2s ease; text-transform: uppercase; }
+.desktop-nav a:hover { opacity: 0.5; }
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+.menu-button {
+    display: none; width: 42px; height: 42px; border: none; background: transparent;
+    cursor: pointer; align-items: center; justify-content: center; padding: 0;
+}
+.menu-icon { width: 20px; height: 14px; position: relative; }
+.menu-icon span {
+    position: absolute; left: 0; width: 20px; height: 1px; background: var(--text);
+    transition: transform 0.25s ease, top 0.25s ease;
+}
+.menu-icon span:first-child { top: 2px; }
+.menu-icon span:last-child { top: 10px; }
+
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+    position: fixed; top: 68px; left: 0; width: 100%; height: calc(100vh - 68px);
+    background: var(--bg); z-index: 999; display: none; padding: 40px 24px;
+}
+.mobile-menu.open { display: block; }
+.mobile-nav { display: flex; flex-direction: column; }
+.mobile-nav a {
+    font-size: 22px; font-weight: 400; padding: 16px 0;
+    border-bottom: 1px solid var(--line); letter-spacing: -0.01em;
 }
 
-.logo {
-    font-size: 17px;
-    letter-spacing: 0.18em;
-    font-weight: 500;
-}
+/* =========================
+   GENERAL
+========================= */
+section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
+.section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; }
+.section-title { font-size: 34px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 60px; }
 
-.desktop-nav {
-    display: flex;
-    gap: 30px;
-}
+/* =========================
+   HERO
+========================= */
+.hero { max-width: var(--max-width); margin: 0 auto; padding: 120px 42px 90px; }
+.hero-image { width: 100%; aspect-ratio: 16 / 10; background: var(--placeholder); overflow: hidden; cursor: pointer; }
+.hero-image img:hover { transform: scale(1.015); }
+.hero-caption { display: flex; justify-content: space-between; gap: 40px; padding-top: 18px; font-size: 12px; color: var(--muted); }
+.hero-caption-left { color: var(--text); }
+.hero-intro { max-width: 820px; padding: 100px 0 20px; font-size: 28px; line-height: 1.45; letter-spacing: -0.015em; }
 
-.desktop-nav a {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    color: #444444;
-}
+/* =========================
+   INTRO
+========================= */
+.intro { border-top: 1px solid var(--line); }
+.intro-text { max-width: 820px; font-size: 21px; line-height: 1.65; }
 
-.desktop-nav a:hover {
-    opacity: 0.5;
-}
+/* =========================
+   WORKS
+========================= */
+.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px 32px; }
+.work-item { cursor: pointer; }
+.work-image { width: 100%; aspect-ratio: 4 / 5; background: var(--placeholder); overflow: hidden; }
+.work-item:hover .work-image img { transform: scale(1.02); opacity: 0.95; }
+.work-info { padding-top: 15px; display: flex; justify-content: space-between; gap: 20px; }
+.work-title { font-size: 13px; }
+.work-meta { font-size: 12px; color: var(--muted); text-align: right; }
 
-section {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 130px 42px;
-}
+/* =========================
+   STUDIO SECTION
+========================= */
+.studio-section { border-top: 1px solid var(--line); }
+.studio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.studio-item { overflow: hidden; cursor: pointer; }
+.studio-item img { aspect-ratio: 4 / 3; object-fit: cover; }
+.studio-item img:hover { transform: scale(1.015); }
+.studio-caption { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
-.section-label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 40px;
-}
+/* =========================
+   SERIES
+========================= */
+.series-list { border-top: 1px solid var(--line); }
+.series-item { border-bottom: 1px solid var(--line); padding: 32px 0; display: grid; grid-template-columns: 70px 1fr 430px; gap: 30px; align-items: baseline; }
+.series-number { font-size: 11px; color: var(--muted); }
+.series-name { font-size: 25px; font-weight: 400; }
+.series-description { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-.section-title {
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin-bottom: 60px;
-}
+/* =========================
+   ABOUT
+========================= */
+.about-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
+.about-left { font-size: 13px; color: var(--muted); }
+.about-name { color: var(--text); font-size: 18px; margin-bottom: 12px; }
+.about-right { max-width: 800px; }
+.about-right p { font-size: 18px; line-height: 1.7; margin-bottom: 28px; }
 
-/* HERO */
+/* =========================
+   STATEMENT
+========================= */
+.statement { border-top: 1px solid var(--line); }
+.statement-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
+.statement-text { max-width: 800px; }
+.statement-text p { font-size: 18px; line-height: 1.75; margin-bottom: 28px; }
 
-.hero {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 120px 42px 90px;
-}
+/* =========================
+   CV / EDUCATION
+========================= */
+.cv-entry { margin-bottom: 45px; }
+.cv-year { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.cv-title { font-size: 18px; line-height: 1.45; margin-bottom: 4px; }
+.cv-place { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.cv-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-.hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background: var(--placeholder);
-    overflow: hidden;
-    cursor: pointer;
-}
+/* =========================
+   CONTACT
+========================= */
+.contact { border-top: 1px solid var(--line); padding-bottom: 150px; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
+.contact-email { font-size: 30px; letter-spacing: -0.02em; display: inline-block; margin-bottom: 30px; }
+.contact-note { max-width: 550px; font-size: 15px; color: var(--muted); }
 
-.hero-image img:hover {
-    transform: scale(1.015);
-}
-
-.hero-caption {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding-top: 18px;
-    font-size: 12px;
-    color: var(--muted);
-}
-
-.hero-caption-left {
-    color: var(--text);
-}
-
-.hero-intro {
-    max-width: 820px;
-    padding: 120px 0 20px;
-    font-size: 28px;
-    line-height: 1.45;
-    letter-spacing: -0.015em;
-}
-
-/* WORKS GRID */
-
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 32px;
-}
-
-.work-item {
-    cursor: pointer;
-}
-
-.work-image {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    background: var(--placeholder);
-    overflow: hidden;
-}
-
-.work-item:hover .work-image img {
-    transform: scale(1.02);
-    opacity: 0.95;
-}
-
-.work-info {
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.work-title {
-    font-size: 13px;
-}
-
-.work-meta {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: right;
-}
-
-/* STUDIO */
-
-.studio-section {
-    border-top: 1px solid var(--line);
-}
-
-.studio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
-.studio-item {
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.studio-item img {
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
-.studio-item img:hover {
-    transform: scale(1.015);
-}
-
-.studio-caption {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 12px;
-}
-
-/* ABOUT & STATEMENT */
-
-.about-layout,
-.statement-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 100px;
-}
-
-.about-left {
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.about-name {
-    color: var(--text);
-    font-size: 18px;
-    margin-bottom: 12px;
-}
-
-.about-right p,
-.statement-text p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 28px;
-}
-
-.statement {
-    border-top: 1px solid var(--line);
-}
-
-/* CV & EXHIBITIONS */
-
-.cv-entry {
-    margin-bottom: 50px;
-}
-
-.cv-year {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 8px;
-}
-
-.cv-title {
-    font-size: 18px;
-    line-height: 1.45;
-    margin-bottom: 5px;
-}
-
-.cv-place {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.7;
-}
-
-/* CONTACT */
-
-.contact {
-    border-top: 1px solid var(--line);
-    padding-bottom: 150px;
-}
-
-.contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 100px;
-}
-
-.contact-email {
-    font-size: 30px;
-    letter-spacing: -0.02em;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
-.contact-note {
-    max-width: 550px;
-    font-size: 15px;
-    color: var(--muted);
-}
-
-/* LIGHTBOX MODAL */
-
+/* =========================
+   LIGHTBOX MODAL
+========================= */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(251,250,247,0.98); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    z-index: 2000; display: none; align-items: center; justify-content: center; padding: 30px;
 }
+.modal.active { display: flex; }
+.modal-content { max-width: 92vw; max-height: 85vh; object-fit: contain; }
+.modal-caption { position: absolute; bottom: 24px; font-size: 12px; color: var(--muted); text-align: center; }
+.modal-close { position: absolute; top: 24px; right: 30px; font-size: 24px; cursor: pointer; background: none; border: none; color: var(--text); }
 
-.modal.active {
-    display: flex;
-}
-
-.modal-content {
-    max-width: 90vw;
-    max-height: 82vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.modal-caption {
-    position: absolute;
-    bottom: 30px;
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-}
-
-.modal-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--text);
-}
-
+/* =========================
+   FOOTER
+========================= */
 footer {
-    border-top: 1px solid var(--line);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 30px 42px 45px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
+    border-top: 1px solid var(--line); max-width: var(--max-width); margin: 0 auto;
+    padding: 30px 42px 45px; display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.05em;
 }
 
-/* MOBILE */
-
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 800px) {
+    header { height: 68px; }
+    .header-inner { padding: 0 20px; }
+    .logo { font-size: 16px; letter-spacing: 0.17em; }
+    .desktop-nav { display: none; }
+    .menu-button { display: flex; }
 
-    section {
-        padding: 90px 20px;
-    }
+    section { padding: 90px 20px; }
+    .hero { padding: 90px 20px 60px; }
+    .hero-image { aspect-ratio: 4 / 5; }
+    .hero-caption { flex-direction: column; gap: 5px; }
+    .hero-intro { padding-top: 60px; font-size: 22px; }
 
-    .hero {
-        padding: 90px 20px 60px;
-    }
+    .section-title { font-size: 28px; margin-bottom: 40px; }
+    .intro-text { font-size: 18px; }
 
-    .works-grid,
-    .studio-grid,
-    .about-layout,
-    .statement-layout,
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
+    .works-grid, .studio-grid { grid-template-columns: 1fr; gap: 55px; }
+    .work-info { flex-direction: column; gap: 4px; }
+    .work-meta { text-align: left; }
 
-    .contact-email {
-        font-size: 22px;
-        word-break: break-word;
-    }
+    .series-item { grid-template-columns: 45px 1fr; gap: 15px; }
+    .series-description { grid-column: 2; }
+    .series-name { font-size: 21px; }
+
+    .about-layout, .statement-layout, .contact-layout { grid-template-columns: 1fr; gap: 45px; }
+    .about-right p, .statement-text p { font-size: 17px; }
+
+    .contact-email { font-size: 22px; word-break: break-word; }
+    footer { padding: 25px 20px 35px; flex-direction: column; gap: 8px; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
 <div class="header-inner">
-
 <a href="#home" class="logo">SHENGPENG SONG</a>
 
 <nav class="desktop-nav">
 <a href="#works">Works</a>
+<a href="#series">Series</a>
 <a href="#studio">Studio</a>
 <a href="#about">About</a>
 <a href="#exhibitions">Exhibitions</a>
 <a href="#contact">Contact</a>
 </nav>
 
+<button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+<div class="menu-icon">
+<span></span>
+<span></span>
+</div>
+</button>
 </div>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-nav">
+<a href="#works">Works</a>
+<a href="#series">Series</a>
+<a href="#studio">Studio</a>
+<a href="#about">About</a>
+<a href="#exhibitions">Exhibitions</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
 
 <main id="home">
 
 <!-- HERO BANNER (1.jpg) -->
-
 <section class="hero">
-
-<div class="hero-image"
-     onclick="openModal('images/1.jpg', 'SHENGPENG SONG in Studio')">
-
-    <img src="images/1.jpg"
-         alt="SHENGPENG SONG in Studio">
-
+<div class="hero-image" onclick="openModal('1.jpg', 'SHENGPENG SONG in Studio')">
+    <img src="1.jpg" alt="SHENGPENG SONG in Studio">
 </div>
-
 <div class="hero-caption">
-
-<div class="hero-caption-left">
-SHENGPENG SONG
+<div class="hero-caption-left">SHENGPENG SONG</div>
+<div>Artist · Painting</div>
 </div>
-
-<div>
-Artist · Germany
-</div>
-
-</div>
-
 <div class="hero-intro">
-
-Painting as a space between the visible and the inner world — exploring memory, vulnerability, uncertainty and transformation through Buddhist philosophy.
-
+Painting as a space between the visible and the inner world — exploring memory, vulnerability, uncertainty and transformation.
 </div>
-
 </section>
 
-
-<!-- WORKS SECTION (2.jpg - 7.jpg) -->
-
-<section id="works">
-
-<div class="section-label">
-01 — Works
+<!-- INTRO -->
+<section class="intro">
+<div class="section-label">01 — Practice</div>
+<div class="intro-text">
+SHENGPENG SONG is a Chinese artist based in Germany whose practice is rooted in painting.
+<br><br>
+His work explores the space between the visible and the inner world, allowing figures, memories and emotional states to emerge through an intuitive process of painting.
 </div>
+</section>
 
-<h2 class="section-title">
-Selected Works
-</h2>
+<!-- WORKS (2.jpg - 7.jpg) -->
+<section id="works">
+<div class="section-label">02 — Works</div>
+<h2 class="section-title">Selected Works</h2>
 
 <div class="works-grid">
 
-
-<div class="work-item"
-     onclick="openModal('images/2.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-
-<div class="work-image">
-<img src="images/2.jpg" alt="Artwork">
+<div class="work-item" onclick="openModal('2.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="work-image"><img src="2.jpg" alt="Artwork 2"></div>
+<div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-info">
-
-<div class="work-title">
-Untitled
+<div class="work-item" onclick="openModal('3.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="work-image"><img src="3.jpg" alt="Artwork 3"></div>
+<div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 70 cm (2026)
+<div class="work-item" onclick="openModal('4.jpg', 'Portrait Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
+<div class="work-image"><img src="4.jpg" alt="Artwork 4"></div>
+<div class="work-info"><div class="work-title">Portrait Study</div><div class="work-meta">Acrylic on canvas<br>50 × 50 cm (2026)</div></div>
 </div>
 
-</div>
-</div>
-
-
-<div class="work-item"
-     onclick="openModal('images/3.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-
-<div class="work-image">
-<img src="images/3.jpg" alt="Artwork">
+<div class="work-item" onclick="openModal('5.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="work-image"><img src="5.jpg" alt="Artwork 5"></div>
+<div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-info">
-
-<div class="work-title">
-Untitled
+<div class="work-item" onclick="openModal('6.jpg', 'Mindfulness Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
+<div class="work-image"><img src="6.jpg" alt="Artwork 6"></div>
+<div class="work-info"><div class="work-title">Mindfulness Study</div><div class="work-meta">Acrylic on canvas<br>50 × 50 cm (2026)</div></div>
 </div>
 
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 70 cm (2026)
+<div class="work-item" onclick="openModal('7.jpg', 'Quietude Series, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="work-image"><img src="7.jpg" alt="Artwork 7"></div>
+<div class="work-info"><div class="work-title">Quietude Series</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
-
-</div>
-</div>
-
-
-<div class="work-item"
-     onclick="openModal('images/4.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 50 cm')">
-
-<div class="work-image">
-<img src="images/4.jpg" alt="Artwork">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Portrait Study
-</div>
-
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 50 cm (2026)
-</div>
-
-</div>
-</div>
-
-
-<div class="work-item"
-     onclick="openModal('images/5.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-
-<div class="work-image">
-<img src="images/5.jpg" alt="Artwork">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Untitled
-</div>
-
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 70 cm (2026)
-</div>
-
-</div>
-</div>
-
-
-<div class="work-item"
-     onclick="openModal('images/6.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 50 cm')">
-
-<div class="work-image">
-<img src="images/6.jpg" alt="Artwork">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Mindfulness Study
-</div>
-
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 50 cm (2026)
-</div>
-
-</div>
-</div>
-
-
-<div class="work-item"
-     onclick="openModal('images/7.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-
-<div class="work-image">
-<img src="images/7.jpg" alt="Artwork">
-</div>
-
-<div class="work-info">
-
-<div class="work-title">
-Quietude Series
-</div>
-
-<div class="work-meta">
-Acrylic on canvas<br>
-50 × 70 cm (2026)
-</div>
-
-</div>
-</div>
-
 
 </div>
 </section>
 
+<!-- SERIES -->
+<section id="series">
+<div class="section-label">03 — Series</div>
+<h2 class="section-title">Selected Series</h2>
 
-<!-- STUDIO SECTION (8.jpg - 11.jpg) -->
-
-<section id="studio" class="studio-section">
-
-<div class="section-label">
-02 — Studio & Process
+<div class="series-list">
+<div class="series-item">
+<div class="series-number">01</div>
+<div class="series-name">Figures</div>
+<div class="series-description">An ongoing exploration of the human face and figure, moving between recognition, fragmentation and inner psychological space.</div>
 </div>
 
-<h2 class="section-title">
-In the Studio
-</h2>
+<div class="series-item">
+<div class="series-number">02</div>
+<div class="series-name">Inner Landscapes</div>
+<div class="series-description">Paintings concerned with memory, emotional states and the spaces that exist between the visible world and inner experience.</div>
+</div>
+
+<div class="series-item">
+<div class="series-number">03</div>
+<div class="series-name">New Works</div>
+<div class="series-description">Recent paintings moving toward more open, intuitive and narrative forms.</div>
+</div>
+</div>
+</section>
+
+<!-- STUDIO (8.jpg - 11.jpg) -->
+<section id="studio" class="studio-section">
+<div class="section-label">04 — Studio & Process</div>
+<h2 class="section-title">In the Studio</h2>
 
 <div class="studio-grid">
-
-
-<div class="studio-item"
-     onclick="openModal('images/8.jpg', 'Working on monumental painting in studio')">
-
-<img src="images/8.jpg"
-     alt="Studio View">
-
-<div class="studio-caption">
-Working on monumental canvas in studio
+<div class="studio-item" onclick="openModal('8.jpg', 'Working on monumental painting in studio')">
+<img src="8.jpg" alt="Studio View 8">
+<div class="studio-caption">Working on monumental canvas in studio</div>
 </div>
 
+<div class="studio-item" onclick="openModal('9.jpg', 'Palette and mixing process')">
+<img src="9.jpg" alt="Studio View 9">
+<div class="studio-caption">Palette and mixing process</div>
 </div>
 
-
-<div class="studio-item"
-     onclick="openModal('images/9.jpg', 'Artist at work')">
-
-<img src="images/9.jpg"
-     alt="Studio View">
-
-<div class="studio-caption">
-Palette and mixing process
+<div class="studio-item" onclick="openModal('10.jpg', 'Studio environment')">
+<img src="10.jpg" alt="Studio View 10">
+<div class="studio-caption">Studio environment and scale</div>
 </div>
 
+<div class="studio-item" onclick="openModal('11.jpg', 'Studio layout and ongoing works')">
+<img src="11.jpg" alt="Studio View 11">
+<div class="studio-caption">Studio layout & ongoing works</div>
 </div>
-
-
-<div class="studio-item"
-     onclick="openModal('images/10.jpg', 'Studio interior')">
-
-<img src="images/10.jpg"
-     alt="Studio View">
-
-<div class="studio-caption">
-Studio environment and scale
-</div>
-
-</div>
-
-
-<div class="studio-item"
-     onclick="openModal('images/11.jpg', 'Studio installation view')">
-
-<img src="images/11.jpg"
-     alt="Studio View">
-
-<div class="studio-caption">
-Studio layout & ongoing works
-</div>
-
-</div>
-
-
 </div>
 </section>
 
-
-<!-- ABOUT SECTION -->
-
+<!-- ABOUT -->
 <section id="about">
-
-<div class="section-label">
-03 — About
-</div>
-
+<div class="section-label">05 — About</div>
 <div class="about-layout">
-
 <div class="about-left">
-
-<div class="about-name">
-SHENGPENG SONG
+<div class="about-name">SHENGPENG SONG</div>
+Artist<br>Based in Germany<br>Painting
 </div>
-
-Artist<br>
-Based in Germany<br>
-Painting
-
-</div>
-
 
 <div class="about-right">
-
-<p>
-SHENGPENG SONG is a Chinese artist based in Germany whose practice is rooted in painting.
-</p>
-
-<p>
-His artistic background developed through studies in media and animation at the China Academy of Art (Hangzhou), followed by an MA in Oil Painting at the China Academy of Oil Painting in Beijing and postgraduate studies (MA Fine Art) at the University for the Creative Arts in the United Kingdom.
-</p>
-
-<p>
-His work has been presented in exhibitions and artist residencies in China, the United Kingdom and Germany, including a solo exhibition in Margate, UK, and artist residencies at the University for the Creative Arts and Alte Schule Hohenstein in Germany.
-</p>
-
-<p>
-Painting has gradually become the central language of his practice. While his earlier work focused strongly on classical realism, his recent practice embraces a "subtractive" philosophy—translating Buddhist wisdom and Zen tranquility into modern abstract visual form.
-</p>
-
+<p>SHENGPENG SONG is a Chinese artist based in Germany whose practice is rooted in painting.</p>
+<p>His artistic background developed through studies in media and animation at the China Academy of Art, followed by an MA in Oil Painting at the China Academy of Oil Painting in Beijing and postgraduate studies in Creative Arts at the University for the Creative Arts in the United Kingdom.</p>
+<p>His work has been presented in exhibitions and artist residencies in China, the United Kingdom and Germany, including a solo exhibition in Margate, UK, and artist residencies at the University for the Creative Arts and Alte Schule Hohenstein in Germany.</p>
+<p>Painting has gradually become the central language of his practice. While his earlier work focused strongly on faces and the human figure, his recent practice moves toward more open and narrative forms of painting.</p>
+<p>Rather than depicting a fixed subject, he is interested in what a figure can carry: memory, vulnerability, uncertainty, desire, conflict and moments of inner transformation.</p>
+<p>His current work explores the space between the visible and the inner world, allowing images to emerge through an intuitive process of painting.</p>
 </div>
 </div>
 </section>
 
-
-<!-- STATEMENT SECTION -->
-
+<!-- ARTIST STATEMENT -->
 <section class="statement">
-
-<div class="section-label">
-04 — Artist Statement
-</div>
-
+<div class="section-label">06 — Artist Statement</div>
 <div class="statement-layout">
-
-<div>
-<h2 class="section-title">
-Artist Statement
-</h2>
-</div>
-
+<div><h2 class="section-title">Artist Statement</h2></div>
 <div class="statement-text">
-
-<p>
-I paint because there are experiences that cannot be fully expressed through words.
-</p>
-
-<p>
-For many years, the human face and figure have been at the centre of my work. I was drawn to the face because it appears familiar, yet it conceals an enormous inner world—holding memory, tension, vulnerability and silence.
-</p>
-
-<p>
-Underlying my process is a long-standing interest in impermanence, mindfulness, and Buddhist thought. I seek to translate compassion and Zen philosophy into contemporary visual art—stripping away visual noise through a practice of "subtraction".
-</p>
-
-<p>
-For me, painting is both an act of looking inward and a way of reaching outward to connect with viewers.
-</p>
-
+<p>I paint because there are experiences that cannot be fully expressed through words.</p>
+<p>For many years, the human face and figure have been at the centre of my work. I was drawn to the face because it appears familiar and recognisable, yet it can also conceal an enormous inner world. A face can hold memory, tension, vulnerability, distance and silence.</p>
+<p>Over time, I began to feel that the figure itself was no longer enough. I became increasingly interested in what exists around and within it — the psychological space between people, the traces of memory, moments of uncertainty, and the quiet changes that take place within us.</p>
+<p>My recent paintings therefore move toward a more narrative and intuitive language. I do not always begin with a fixed story. Instead, images develop through the process of painting. Forms appear, disappear and return; figures become fragmented, connected or transformed. The painting becomes a space in which an experience can unfold rather than a scene that needs to be completely explained.</p>
+<p>Underlying this process is a long-standing interest in impermanence and the nature of inner experience. Buddhist thought has influenced the way I look at change, attachment, suffering and the relationship between the individual and the world. I do not seek to illustrate Buddhist teachings directly. Instead, these ideas remain in the background as a way of looking — a quiet awareness of change, uncertainty and transformation.</p>
+<p>For me, painting is both an act of looking inward and a way of reaching outward.</p>
+<p>I hope the paintings leave enough space for the viewer to enter with their own memories and experiences. The meaning of an image does not need to be fixed. It can remain open, changing through the encounter between the painting and the person who stands before it.</p>
 </div>
 </div>
 </section>
-
 
 <!-- EXHIBITIONS & EDUCATION -->
-
 <section id="exhibitions">
+<div class="section-label">07 — Biography & Exhibitions</div>
+<h2 class="section-title">Education & Exhibitions</h2>
 
-<div class="section-label">
-05 — Exhibitions & Education
-</div>
-
-<h2 class="section-title">
-Biography & Exhibitions
-</h2>
-
+<h3 style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 25px;">Education</h3>
 
 <div class="cv-entry">
-
-<div class="cv-year">
-2022
+<div class="cv-year">2014–2015</div>
+<div class="cv-title">MA in Creative Arts</div>
+<div class="cv-place">University for the Creative Arts (UCA), Canterbury, United Kingdom</div>
 </div>
-
-<div class="cv-title">
-Rafi Meunz & SHENGPENG SONG — Two-Person Exhibition
-</div>
-
-<div class="cv-place">
-Kulturbahnhof Hersbruck, Bavaria, Germany
-</div>
-
-</div>
-
 
 <div class="cv-entry">
-
-<div class="cv-year">
-2017
+<div class="cv-year">2013–2014</div>
+<div class="cv-title">Diploma in Art & Design</div>
+<div class="cv-place">University for the Creative Arts (UCA), Farnham, United Kingdom</div>
 </div>
-
-<div class="cv-title">
-International Young Artists Exhibition — Group Exhibition
-</div>
-
-<div class="cv-place">
-Kunstmuseum Hersbruck, Bavaria, Germany
-</div>
-
-</div>
-
 
 <div class="cv-entry">
-
-<div class="cv-year">
-2016
+<div class="cv-year">2011–2012</div>
+<div class="cv-title">MA in Oil Painting</div>
+<div class="cv-place">China Academy of Oil Painting, Beijing, China</div>
 </div>
-
-<div class="cv-title">
-Artist Residency
-</div>
-
-<div class="cv-place">
-Alte Schule Hohenstein, Kirchensittenbach, Germany
-</div>
-
-</div>
-
 
 <div class="cv-entry">
-
-<div class="cv-year">
-2015
+<div class="cv-year">2007–2011</div>
+<div class="cv-title">BA in Media & Animation (Major in Online Game Art & Design)</div>
+<div class="cv-place">China Academy of Art, Hangzhou, China</div>
 </div>
 
-<div class="cv-title">
-MA Fine Art
-</div>
-
-<div class="cv-place">
-University for the Creative Arts (UCA), Canterbury, United Kingdom
-</div>
-
-</div>
-
+<h3 style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 50px 0 25px;">Selected Exhibitions & Activities</h3>
 
 <div class="cv-entry">
-
-<div class="cv-year">
-2012
+<div class="cv-year">2022</div>
+<div class="cv-title">Rafi Meunz & SHENGPENG SONG — Two-Person Exhibition</div>
+<div class="cv-place">Kulturbahnhof Hersbruck, Bavaria, Germany</div>
 </div>
 
-<div class="cv-title">
-MA Oil Painting & Aowen Award (奥文奖学金)
+<div class="cv-entry">
+<div class="cv-year">2017</div>
+<div class="cv-title">International Young Artists Exhibition — Group Exhibition</div>
+<div class="cv-place">Kunstmuseum Hersbruck, Bavaria, Germany</div>
 </div>
 
-<div class="cv-place">
-China Academy of Oil Painting, Beijing, China
+<div class="cv-entry">
+<div class="cv-year">2016</div>
+<div class="cv-title">Artist Residency</div>
+<div class="cv-place">Alte Schule Hohenstein, Hohenstein, Kirchensittenbach, Germany</div>
 </div>
 
+<div class="cv-entry">
+<div class="cv-year">2015</div>
+<div class="cv-title">Artist Residency</div>
+<div class="cv-place">University for the Creative Arts, Canterbury, United Kingdom</div>
 </div>
 
+<div class="cv-entry">
+<div class="cv-year">2015</div>
+<div class="cv-title">Power of Opportunity — Solo Exhibition</div>
+<div class="cv-place">Margate, United Kingdom (First solo exhibition)</div>
+</div>
+
+<div class="cv-entry">
+<div class="cv-year">2015</div>
+<div class="cv-title">Spaces in Between — Group Exhibition</div>
+<div class="cv-place">University for the Creative Arts, Folkestone, United Kingdom</div>
+</div>
+
+<div class="cv-entry">
+<div class="cv-year">2013</div>
+<div class="cv-title">Seminar Presentation Exhibition — Group Exhibition</div>
+<div class="cv-place">China Academy of Oil Painting, Beijing, China</div>
+</div>
+
+<div class="cv-entry">
+<div class="cv-year">2012</div>
+<div class="cv-title">Aowen Award (奥文奖学金)</div>
+<div class="cv-place">China Academy of Oil Painting, Beijing, China</div>
+<div class="cv-note">Institutional award established by the China Academy of Oil Painting</div>
+</div>
+
+<div class="cv-entry">
+<div class="cv-year">2009</div>
+<div class="cv-title">Stars of the Century — Group Exhibition</div>
+<div class="cv-place">China Academy of Art, Hangzhou, China</div>
+</div>
 </section>
 
-
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
-
-<div class="section-label">
-06 — Contact
-</div>
-
+<div class="section-label">08 — Contact</div>
 <div class="contact-layout">
-
+<div><h2 class="section-title">Contact</h2></div>
 <div>
-
-<h2 class="section-title">
-Contact
-</h2>
-
+<a href="mailto:spsong.art@gmail.com" class="contact-email">spsong.art@gmail.com</a>
+<p class="contact-note">For gallery enquiries, exhibition opportunities, studio visits and professional collaborations, please get in touch by email.</p>
 </div>
-
-<div>
-
-<a href="mailto:spsong.art@gmail.com"
-   class="contact-email">
-
-spsong.art@gmail.com
-
-</a>
-
-<p class="contact-note">
-
-For gallery enquiries, exhibition opportunities, studio visits and professional collaborations, please get in touch by email.
-
-</p>
-
 </div>
-
-</div>
-
 </section>
 
 </main>
 
-
 <!-- LIGHTBOX MODAL -->
-
-<div class="modal"
-     id="imageModal"
-     onclick="closeModal()">
-
-<button class="modal-close"
-        onclick="event.stopPropagation(); closeModal()">
-✕
-</button>
-
-<img class="modal-content"
-     id="modalImg"
-     src=""
-     alt="Full view">
-
-<div class="modal-caption"
-     id="modalCaption">
+<div class="modal" id="imageModal" onclick="closeModal()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <img class="modal-content" id="modalImg" src="" alt="Full view">
+    <div class="modal-caption" id="modalCaption"></div>
 </div>
 
-</div>
-
-
+<!-- FOOTER -->
 <footer>
-
-<div>
-© SHENGPENG SONG
-</div>
-
-<div>
-Germany · Painting
-</div>
-
+<div>© SHENGPENG SONG</div>
+<div>Germany · Painting</div>
 </footer>
 
-
 <script>
+/* MOBILE MENU SCRIPT */
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
+menuButton.addEventListener("click", function () {
+    const isOpen = mobileMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open", isOpen);
+    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+});
+
+mobileLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open menu");
+    });
+});
+
+/* LIGHTBOX MODAL SCRIPT */
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const modalCaption = document.getElementById("modalCaption");
 
-
 function openModal(src, caption) {
-
     modal.classList.add("active");
-
     document.body.classList.add("modal-open");
-
     modalImg.src = src;
-
     modalCaption.textContent = caption || "";
-
 }
-
 
 function closeModal() {
-
     modal.classList.remove("active");
-
     document.body.classList.remove("modal-open");
-
 }
 
-
 document.addEventListener("keydown", function(e) {
-
-    if (e.key === "Escape") {
-
-        closeModal();
-
-    }
-
+    if (e.key === "Escape") { closeModal(); }
 });
-
 </script>
 
 </body>
 </html>
-
