@@ -18,9 +18,7 @@
     --max-width: 1440px;
 }
 
-/* =========================
-   RESET & BASE
-========================= */
+/* RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -33,7 +31,6 @@ body {
 body.menu-open, body.modal-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 
-/* Image optimization & fallback container */
 .img-container {
     width: 100%;
     background-color: var(--placeholder);
@@ -48,9 +45,7 @@ img {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 76px;
     background: rgba(251,250,247,0.95);
@@ -67,7 +62,6 @@ header {
 .desktop-nav a { font-size: 12px; letter-spacing: 0.08em; color: #44413d; transition: opacity 0.2s ease; text-transform: uppercase; }
 .desktop-nav a:hover { opacity: 0.5; }
 
-/* MOBILE MENU BUTTON */
 .menu-button {
     display: none; width: 42px; height: 42px; border: none; background: transparent;
     cursor: pointer; align-items: center; justify-content: center; padding: 0;
@@ -80,7 +74,6 @@ header {
 .menu-icon span:first-child { top: 2px; }
 .menu-icon span:last-child { top: 10px; }
 
-/* MOBILE MENU DRAWER */
 .mobile-menu {
     position: fixed; top: 68px; left: 0; width: 100%; height: calc(100vh - 68px);
     background: var(--bg); z-index: 999; display: none; padding: 40px 24px;
@@ -92,14 +85,11 @@ header {
     border-bottom: 1px solid var(--line); letter-spacing: -0.01em;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; }
 .section-title { font-size: 34px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 60px; }
 
-/* HERO */
 .hero { max-width: var(--max-width); margin: 0 auto; padding: 120px 42px 90px; }
 .hero-image { aspect-ratio: 16 / 9; cursor: pointer; }
 .hero-image img:hover { transform: scale(1.015); }
@@ -107,11 +97,9 @@ section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .hero-caption-left { color: var(--text); }
 .hero-intro { max-width: 820px; padding: 90px 0 20px; font-size: 28px; line-height: 1.45; letter-spacing: -0.015em; }
 
-/* INTRO */
 .intro { border-top: 1px solid var(--line); }
 .intro-text { max-width: 820px; font-size: 21px; line-height: 1.65; }
 
-/* WORKS GRID (8 Images) */
 .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px 32px; }
 .work-item { cursor: pointer; }
 .work-image { aspect-ratio: 4 / 5; }
@@ -120,7 +108,6 @@ section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .work-title { font-size: 13px; font-weight: 500; }
 .work-meta { font-size: 12px; color: var(--muted); text-align: right; }
 
-/* SERIES WITH PREVIEW IMAGES */
 .series-list { border-top: 1px solid var(--line); }
 .series-item {
     border-bottom: 1px solid var(--line); padding: 40px 0;
@@ -132,7 +119,6 @@ section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .series-image img:hover { transform: scale(1.03); }
 .series-description { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-/* STUDIO GRID (4 Images) */
 .studio-section { border-top: 1px solid var(--line); }
 .studio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 .studio-item { cursor: pointer; }
@@ -140,26 +126,22 @@ section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .studio-item img:hover { transform: scale(1.02); }
 .studio-caption { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
-/* ABOUT & STATEMENT */
 .about-layout, .statement-layout, .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
 .about-left { font-size: 13px; color: var(--muted); }
 .about-name { color: var(--text); font-size: 18px; margin-bottom: 12px; }
 .about-right p, .statement-text p { font-size: 18px; line-height: 1.75; margin-bottom: 28px; }
 .statement { border-top: 1px solid var(--line); }
 
-/* CV ENTRY */
 .cv-entry { margin-bottom: 45px; }
 .cv-year { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
 .cv-title { font-size: 18px; line-height: 1.45; margin-bottom: 4px; }
 .cv-place { font-size: 14px; color: var(--muted); line-height: 1.7; }
 .cv-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-/* CONTACT */
 .contact { border-top: 1px solid var(--line); padding-bottom: 150px; }
 .contact-email { font-size: 30px; letter-spacing: -0.02em; display: inline-block; margin-bottom: 30px; }
 .contact-note { max-width: 550px; font-size: 15px; color: var(--muted); }
 
-/* LIGHTBOX MODAL */
 .modal {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(251,250,247,0.98); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -170,14 +152,12 @@ section { max-width: var(--max-width); margin: 0 auto; padding: 130px 42px; }
 .modal-caption { position: absolute; bottom: 24px; font-size: 12px; color: var(--muted); text-align: center; }
 .modal-close { position: absolute; top: 24px; right: 30px; font-size: 26px; cursor: pointer; background: none; border: none; color: var(--text); }
 
-/* FOOTER */
 footer {
     border-top: 1px solid var(--line); max-width: var(--max-width); margin: 0 auto;
     padding: 30px 42px 45px; display: flex; justify-content: space-between;
     font-size: 11px; color: var(--muted); letter-spacing: 0.05em;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
     header { height: 68px; }
     .header-inner { padding: 0 20px; }
@@ -212,7 +192,6 @@ footer {
 
 <body>
 
-<!-- HEADER -->
 <header>
 <div class="header-inner">
 <a href="#home" class="logo">SHENGPENG SONG</a>
@@ -235,7 +214,6 @@ footer {
 </div>
 </header>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
 <nav class="mobile-nav">
 <a href="#works">Works</a>
@@ -249,10 +227,10 @@ footer {
 
 <main id="home">
 
-<!-- HERO BANNER (1.jpg) -->
+<!-- HERO BANNER (../1.jpg) -->
 <section class="hero">
-<div class="img-container hero-image" onclick="openModal('1.jpg', 'SHENGPENG SONG — Studio Work')">
-    <img src="1.jpg" alt="SHENGPENG SONG Studio">
+<div class="img-container hero-image" onclick="openModal('../1.jpg', 'SHENGPENG SONG — Studio Work')">
+    <img src="../1.jpg" alt="SHENGPENG SONG Studio">
 </div>
 <div class="hero-caption">
 <div class="hero-caption-left">SHENGPENG SONG</div>
@@ -273,57 +251,57 @@ His work explores the space between the visible and the inner world, allowing fi
 </div>
 </section>
 
-<!-- WORKS (2.jpg to 9.jpg) -->
+<!-- WORKS (../2.jpg to ../9.jpg) -->
 <section id="works">
 <div class="section-label">02 — Works</div>
 <h2 class="section-title">Selected Works</h2>
 
 <div class="works-grid">
 
-<div class="work-item" onclick="openModal('2.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-<div class="img-container work-image"><img src="2.jpg" alt="Artwork 2"></div>
+<div class="work-item" onclick="openModal('../2.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="img-container work-image"><img src="../2.jpg" alt="Artwork 2"></div>
 <div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('3.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-<div class="img-container work-image"><img src="3.jpg" alt="Artwork 3"></div>
+<div class="work-item" onclick="openModal('../3.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="img-container work-image"><img src="../3.jpg" alt="Artwork 3"></div>
 <div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('4.jpg', 'Portrait Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
-<div class="img-container work-image"><img src="4.jpg" alt="Artwork 4"></div>
+<div class="work-item" onclick="openModal('../4.jpg', 'Portrait Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
+<div class="img-container work-image"><img src="../4.jpg" alt="Artwork 4"></div>
 <div class="work-info"><div class="work-title">Portrait Study</div><div class="work-meta">Acrylic on canvas<br>50 × 50 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('5.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
-<div class="img-container work-image"><img src="5.jpg" alt="Artwork 5"></div>
+<div class="work-item" onclick="openModal('../5.jpg', 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="img-container work-image"><img src="../5.jpg" alt="Artwork 5"></div>
 <div class="work-info"><div class="work-title">Untitled</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('6.jpg', 'Mindfulness Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
-<div class="img-container work-image"><img src="6.jpg" alt="Artwork 6"></div>
+<div class="work-item" onclick="openModal('../6.jpg', 'Mindfulness Study, 2026 — Acrylic on canvas, 50 × 50 cm')">
+<div class="img-container work-image"><img src="../6.jpg" alt="Artwork 6"></div>
 <div class="work-info"><div class="work-title">Mindfulness Study</div><div class="work-meta">Acrylic on canvas<br>50 × 50 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('7.jpg', 'Quietude Series, 2026 — Acrylic on canvas, 50 × 70 cm')">
-<div class="img-container work-image"><img src="7.jpg" alt="Artwork 7"></div>
+<div class="work-item" onclick="openModal('../7.jpg', 'Quietude Series, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="img-container work-image"><img src="../7.jpg" alt="Artwork 7"></div>
 <div class="work-info"><div class="work-title">Quietude Series</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('8.jpg', 'Impression & Space, 2026 — Acrylic on canvas, 50 × 70 cm')">
-<div class="img-container work-image"><img src="8.jpg" alt="Artwork 8"></div>
+<div class="work-item" onclick="openModal('../8.jpg', 'Impression & Space, 2026 — Acrylic on canvas, 50 × 70 cm')">
+<div class="img-container work-image"><img src="../8.jpg" alt="Artwork 8"></div>
 <div class="work-info"><div class="work-title">Impression & Space</div><div class="work-meta">Acrylic on canvas<br>50 × 70 cm (2026)</div></div>
 </div>
 
-<div class="work-item" onclick="openModal('9.jpg', 'Traces of Memory, 2026 — Acrylic on canvas, 50 × 50 cm')">
-<div class="img-container work-image"><img src="9.jpg" alt="Artwork 9"></div>
+<div class="work-item" onclick="openModal('../9.jpg', 'Traces of Memory, 2026 — Acrylic on canvas, 50 × 50 cm')">
+<div class="img-container work-image"><img src="../9.jpg" alt="Artwork 9"></div>
 <div class="work-info"><div class="work-title">Traces of Memory</div><div class="work-meta">Acrylic on canvas<br>50 × 50 cm (2026)</div></div>
 </div>
 
 </div>
 </section>
 
-<!-- SERIES (10.jpg & 11.jpg) -->
+<!-- SERIES (../10.jpg & ../11.jpg) -->
 <section id="series">
 <div class="section-label">03 — Series</div>
 <h2 class="section-title">Selected Series</h2>
@@ -332,8 +310,8 @@ His work explores the space between the visible and the inner world, allowing fi
 <div class="series-item">
 <div class="series-number">01</div>
 <div class="series-name">Figures</div>
-<div class="img-container series-image" onclick="openModal('10.jpg', 'Figures Series — SHENGPENG SONG')">
-    <img src="10.jpg" alt="Figures Series">
+<div class="img-container series-image" onclick="openModal('../10.jpg', 'Figures Series — SHENGPENG SONG')">
+    <img src="../10.jpg" alt="Figures Series">
 </div>
 <div class="series-description">An ongoing exploration of the human face and figure, moving between recognition, fragmentation and inner psychological space.</div>
 </div>
@@ -341,37 +319,37 @@ His work explores the space between the visible and the inner world, allowing fi
 <div class="series-item">
 <div class="series-number">02</div>
 <div class="series-name">Inner Landscapes</div>
-<div class="img-container series-image" onclick="openModal('11.jpg', 'Inner Landscapes Series — SHENGPENG SONG')">
-    <img src="11.jpg" alt="Inner Landscapes Series">
+<div class="img-container series-image" onclick="openModal('../11.jpg', 'Inner Landscapes Series — SHENGPENG SONG')">
+    <img src="../11.jpg" alt="Inner Landscapes Series">
 </div>
 <div class="series-description">Paintings concerned with memory, emotional states and the spaces that exist between the visible world and inner experience.</div>
 </div>
 </div>
 </section>
 
-<!-- STUDIO & PROCESS (12.jpg to 15.jpg) -->
+<!-- STUDIO & PROCESS (../12.jpg to ../15.jpg) -->
 <section id="studio" class="studio-section">
 <div class="section-label">04 — Studio & Process</div>
 <h2 class="section-title">In the Studio</h2>
 
 <div class="studio-grid">
-<div class="studio-item" onclick="openModal('12.jpg', 'Large canvas in progress in studio')">
-<div class="img-container"><img src="12.jpg" alt="Studio View 12"></div>
+<div class="studio-item" onclick="openModal('../12.jpg', 'Large canvas in progress in studio')">
+<div class="img-container"><img src="../12.jpg" alt="Studio View 12"></div>
 <div class="studio-caption">Large canvas in progress in studio</div>
 </div>
 
-<div class="studio-item" onclick="openModal('13.jpg', 'Palette and material detail')">
-<div class="img-container"><img src="13.jpg" alt="Studio View 13"></div>
+<div class="studio-item" onclick="openModal('../13.jpg', 'Palette and material detail')">
+<div class="img-container"><img src="../13.jpg" alt="Studio View 13"></div>
 <div class="studio-caption">Palette and material detail</div>
 </div>
 
-<div class="studio-item" onclick="openModal('14.jpg', 'Studio light and workspace setup')">
-<div class="img-container"><img src="14.jpg" alt="Studio View 14"></div>
+<div class="studio-item" onclick="openModal('../14.jpg', 'Studio light and workspace setup')">
+<div class="img-container"><img src="../14.jpg" alt="Studio View 14"></div>
 <div class="studio-caption">Studio light and workspace setup</div>
 </div>
 
-<div class="studio-item" onclick="openModal('15.jpg', 'Works on display in studio')">
-<div class="img-container"><img src="15.jpg" alt="Studio View 15"></div>
+<div class="studio-item" onclick="openModal('../15.jpg', 'Works on display in studio')">
+<div class="img-container"><img src="../15.jpg" alt="Studio View 15"></div>
 <div class="studio-caption">Works on display in studio</div>
 </div>
 </div>
@@ -517,21 +495,18 @@ Artist<br>Based in Germany<br>Painting
 
 </main>
 
-<!-- LIGHTBOX MODAL -->
 <div class="modal" id="imageModal" onclick="closeModal()">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <img class="modal-content" id="modalImg" src="" alt="Full view">
     <div class="modal-caption" id="modalCaption"></div>
 </div>
 
-<!-- FOOTER -->
 <footer>
 <div>© SHENGPENG SONG</div>
 <div>Germany · Painting</div>
 </footer>
 
 <script>
-/* MOBILE MENU SCRIPT */
 const menuButton = document.getElementById("menuButton");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
@@ -550,7 +525,6 @@ mobileLinks.forEach(function(link) {
     });
 });
 
-/* LIGHTBOX MODAL SCRIPT */
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const modalCaption = document.getElementById("modalCaption");
