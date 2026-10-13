@@ -380,7 +380,7 @@ section {
 
 
 /* =========================================================
-   WORKS (消除外层灰框，纯净融合背景)
+   WORKS (透明底色，消除外层灰框)
 ========================================================= */
 
 .works-grid {
@@ -397,23 +397,20 @@ section {
 
 .work-image {
     aspect-ratio: 4 / 5;
+
     background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .work-image img {
     object-fit: contain;
+
     padding: 0;
-    max-width: 100%;
-    max-height: 100%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
 .work-item:hover .work-image img {
     transform: scale(1.015);
-    opacity: 0.96;
+
+    opacity: 0.95;
 }
 
 .work-info {
@@ -530,6 +527,7 @@ section {
 
 .studio-item .img-container {
     aspect-ratio: 4 / 3;
+
     background: transparent;
 }
 
@@ -666,7 +664,7 @@ section {
 
 
 /* =========================================================
-   IMAGE MODAL (LIGHTBOX WITH MULTI-VIEW SWITCHER)
+   IMAGE MODAL
 ========================================================= */
 
 .modal {
@@ -708,7 +706,692 @@ section {
 
 .modal-content {
     max-width: 100%;
+
     max-height: 75vh;
+
     width: auto;
     height: auto;
-    object-fit
+
+    object-fit: contain;
+}
+
+.modal-caption {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+    text-align: center;
+}
+
+.modal-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.thumb-btn {
+    background: none;
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s ease;
+}
+
+.thumb-btn.active, .thumb-btn:hover {
+    border-color: var(--text);
+    color: var(--text);
+    background: var(--surface);
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 24px;
+    right: 30px;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    background: none;
+
+    border: none;
+
+    color: var(--text);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid var(--line);
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 30px 42px 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        height: 68px;
+    }
+
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .hero {
+        padding: 90px 20px 50px;
+    }
+
+    .hero-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hero-caption {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .hero-intro {
+        padding-top: 50px;
+
+        font-size: 31px;
+
+        line-height: 1.18;
+    }
+
+    .hero-subline {
+        font-size: 14px;
+
+        margin-top: 18px;
+    }
+
+    .section-title {
+        font-size: 26px;
+
+        margin-bottom: 40px;
+    }
+
+    .intro-text {
+        font-size: 18px;
+    }
+
+    .intro-lead {
+        font-size: 21px;
+    }
+
+    .works-grid,
+    .studio-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .work-info {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .work-meta {
+        text-align: left;
+    }
+
+    .work-image {
+        aspect-ratio: 4 / 5;
+    }
+
+    .series-item {
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+    }
+
+    .series-image,
+    .series-description {
+        grid-column: 2;
+    }
+
+    .series-name {
+        font-size: 22px;
+    }
+
+    .about-layout,
+    .statement-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-right p,
+    .statement-text p {
+        font-size: 16px;
+    }
+
+    .contact-email {
+        font-size: 22px;
+
+        word-break: break-word;
+    }
+
+    footer {
+        padding: 25px 20px 35px;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 14px;
+
+        letter-spacing: 0.14em;
+    }
+
+    .hero-intro {
+        font-size: 28px;
+    }
+
+    .hero-subline {
+        font-size: 13px;
+    }
+
+    .work-image {
+        aspect-ratio: 4 / 5;
+    }
+
+    .series-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        max-width: 96vw;
+
+        max-height: 70vh;
+    }
+
+    .modal-close {
+        top: 15px;
+
+        right: 18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header-inner">
+
+<a href="#home" class="logo">
+SHENGPENG SONG
+</a>
+
+<nav class="desktop-nav">
+
+<a href="#works">Works</a>
+
+<a href="#series">Series</a>
+
+<a href="#studio">Studio</a>
+
+<a href="#about">About</a>
+
+<a href="#exhibitions">CV</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<button
+    class="menu-button"
+    id="menuButton"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobileMenu"
+>
+
+<div class="menu-icon">
+
+<span></span>
+<span></span>
+
+</div>
+
+</button>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+<nav class="mobile-nav">
+
+<a href="#works">Works</a>
+
+<a href="#series">Series</a>
+
+<a href="#studio">Studio</a>
+
+<a href="#about">About</a>
+
+<a href="#exhibitions">CV</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</div>
+
+
+
+<main id="home">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+<div
+    class="img-container hero-image"
+    onclick="openModal({
+        main: 'images/1.jpg',
+        caption: 'SHENGPENG SONG — Studio Work'
+    })"
+    role="button"
+    tabindex="0"
+    aria-label="View studio image"
+>
+
+<img
+    src="images/1.jpg"
+    alt="SHENGPENG SONG — studio work"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="hero-caption">
+
+<div class="hero-caption-left">
+SHENGPENG SONG
+</div>
+
+<div>
+Artist · Painting
+</div>
+
+</div>
+
+
+<div class="hero-intro">
+
+Painting as a space between the visible and the inner world.
+
+<div class="hero-subline">
+
+Figures, memory and emotional states emerge through an intuitive process of painting.
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PRACTICE
+===================================================== -->
+
+<section class="intro">
+
+<div class="section-label">
+01 — Practice
+</div>
+
+
+<div class="intro-text">
+
+<div class="intro-lead">
+
+SHENGPENG SONG is a Chinese artist based in Germany whose practice is rooted in painting.
+
+</div>
+
+
+His work explores the space between the visible and the inner world, allowing figures, memories and emotional states to emerge through an intuitive process of painting.
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WORKS
+===================================================== -->
+
+<section id="works">
+
+<div class="section-label">
+02 — Works
+</div>
+
+<h2 class="section-title">
+Works
+</h2>
+
+
+<div class="works-grid">
+
+
+<!-- WORK 01 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/2.jpg',
+        detail: 'images/2-detail.jpg',
+        side: 'images/2-side.jpg',
+        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm',
+        title: 'Untitled'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/2.jpg"
+    alt="SHENGPENG SONG, Untitled, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 02 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/3.jpg',
+        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/3.jpg"
+    alt="SHENGPENG SONG, Untitled, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 03 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/4.jpg',
+        caption: 'Portrait Study, 2026 — Acrylic on canvas, 50 × 50 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/4.jpg"
+    alt="SHENGPENG SONG, Portrait Study, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Portrait Study
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 04 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/5.jpg',
+        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/5.jpg"
+    alt="SHENGPENG SONG, Untitled, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 05 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/6.jpg',
+        caption: 'Mindfulness Study, 2026 — Acrylic on canvas, 50 × 50 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/6.jpg"
+    alt="SHENGPENG SONG, Mindfulness Study, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Mindfulness Study
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 06 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/7.jpg',
+        caption: 'Quietude Series, 2026 — Acrylic on canvas, 50 × 70 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/7.jpg"
+    alt="SHENGPENG SONG, Quietude Series, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Quietude Series
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
