@@ -80,7 +80,7 @@ button {
 
 
 /* =========================================================
-   GLOBAL IMAGE SYSTEM (消除外层灰色大框)
+   GLOBAL IMAGE SYSTEM
 ========================================================= */
 
 .img-container {
@@ -398,13 +398,13 @@ section {
 .work-image {
     aspect-ratio: 4 / 5;
 
-    background: transparent; /* 去除外层灰色背景框 */
+    background: transparent;
 }
 
 .work-image img {
     object-fit: contain;
 
-    padding: 0; /* 去除内边距 */
+    padding: 0;
 }
 
 .work-item:hover .work-image img {
@@ -483,7 +483,7 @@ section {
 
     cursor: pointer;
 
-    background: transparent; /* 去除外层灰色背景框 */
+    background: transparent;
 }
 
 .series-image img {
@@ -528,7 +528,7 @@ section {
 .studio-item .img-container {
     aspect-ratio: 4 / 3;
 
-    background: transparent; /* 去除外层灰色背景框 */
+    background: transparent;
 }
 
 .studio-item img:hover {
@@ -664,108 +664,145 @@ section {
 
 
 /* =========================================================
-   IMAGE MODAL
+   WHITE CUBE GALLERY STYLE MODAL (顶级画廊详情面板)
 ========================================================= */
 
 .modal {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100vw;
     height: 100vh;
-
     background: rgba(251, 250, 247, 0.98);
-
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
     z-index: 2000;
-
     display: none;
-
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    padding: 30px;
+    padding: 60px 80px;
 }
 
 .modal.active {
     display: flex;
 }
 
-.modal-body {
-    max-width: 92vw;
-    max-height: 75vh;
+.modal-container {
+    width: 100%;
+    max-width: 1300px;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* 左侧大图展示区 */
+.modal-left {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
 }
 
 .modal-content {
     max-width: 100%;
-
-    max-height: 75vh;
-
-    width: auto;
-    height: auto;
-
+    max-height: 82vh;
     object-fit: contain;
 }
 
-.modal-caption {
-    margin-top: 20px;
-
-    font-size: 13px;
-
-    color: var(--muted);
-
-    text-align: center;
-}
-
-.modal-thumbnails {
+/* 右侧信息与导航区 */
+.modal-right {
     display: flex;
-    gap: 12px;
-    margin-top: 15px;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
 }
 
-.thumb-btn {
-    background: none;
-    border: 1px solid var(--line);
-    padding: 6px 14px;
-    font-size: 11px;
+.modal-artist {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.modal-title-text {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.modal-year {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.enquire-btn {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 10px 24px;
+    border: 1px solid var(--text);
+    background: transparent;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 35px;
+}
+
+.enquire-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.modal-specs {
+    font-size: 13px;
+    line-height: 1.6;
     color: var(--muted);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+/* 缩略图切换区 */
+.modal-thumbnails {
+    display: flex;
+    gap: 12px;
+}
+
+.modal-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    opacity: 0.6;
     transition: all 0.2s ease;
 }
 
-.thumb-btn.active, .thumb-btn:hover {
+.modal-thumb.active, .modal-thumb:hover {
+    opacity: 1;
     border-color: var(--text);
-    color: var(--text);
-    background: var(--surface);
 }
 
 .modal-close {
     position: absolute;
-
-    top: 24px;
-    right: 30px;
-
-    font-size: 26px;
-
+    top: -20px;
+    right: 0;
+    font-size: 28px;
     cursor: pointer;
-
     background: none;
-
     border: none;
-
     color: var(--text);
-
-    z-index: 2;
+    z-index: 10;
 }
 
 
@@ -924,6 +961,24 @@ footer {
 
         gap: 8px;
     }
+
+    /* 移动端弹窗调整为单列 */
+    .modal {
+        padding: 20px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .modal-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 30px;
+        padding-top: 40px;
+    }
+
+    .modal-right {
+        padding-right: 0;
+    }
 }
 
 
@@ -953,22 +1008,6 @@ footer {
 
     .series-image {
         aspect-ratio: 4 / 3;
-    }
-
-    .modal {
-        padding: 15px;
-    }
-
-    .modal-content {
-        max-width: 96vw;
-
-        max-height: 70vh;
-    }
-
-    .modal-close {
-        top: 15px;
-
-        right: 18px;
     }
 }
 
@@ -1073,8 +1112,11 @@ SHENGPENG SONG
 <div
     class="img-container hero-image"
     onclick="openModal({
-        main: 'images/1.jpg',
-        caption: 'SHENGPENG SONG — Studio Work'
+        artist: 'SHENGPENG SONG',
+        title: 'Studio Work',
+        year: '2026',
+        specs: 'Studio workspace & monumental canvas in progress',
+        main: 'images/1.jpg'
     })"
     role="button"
     tabindex="0"
@@ -1167,16 +1209,18 @@ Works
 <div class="works-grid">
 
 
-<!-- WORK 01 -->
+<!-- WORK 01 (支持多图展示及侧面/细节切换) -->
 
 <div
     class="work-item"
     onclick="openModal({
+        artist: 'SHENGPENG SONG',
+        title: 'Untitled',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 70 cm',
         main: 'images/2.jpg',
         detail: 'images/2-detail.jpg',
-        side: 'images/2-side.jpg',
-        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm',
-        title: 'Untitled'
+        side: 'images/2-side.jpg'
     })"
 >
 
@@ -1214,8 +1258,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/3.jpg',
-        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Untitled',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 70 cm',
+        main: 'images/3.jpg'
     })"
 >
 
@@ -1253,8 +1300,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/4.jpg',
-        caption: 'Portrait Study, 2026 — Acrylic on canvas, 50 × 50 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Portrait Study',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 50 cm',
+        main: 'images/4.jpg'
     })"
 >
 
@@ -1292,8 +1342,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/5.jpg',
-        caption: 'Untitled, 2026 — Acrylic on canvas, 50 × 70 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Untitled',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 70 cm',
+        main: 'images/5.jpg'
     })"
 >
 
@@ -1331,8 +1384,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/6.jpg',
-        caption: 'Mindfulness Study, 2026 — Acrylic on canvas, 50 × 50 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Mindfulness Study',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 50 cm',
+        main: 'images/6.jpg'
     })"
 >
 
@@ -1370,8 +1426,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/7.jpg',
-        caption: 'Quietude Series, 2026 — Acrylic on canvas, 50 × 70 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Quietude Series',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 70 cm',
+        main: 'images/7.jpg'
     })"
 >
 
@@ -1409,8 +1468,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/8.jpg',
-        caption: 'Impression & Space, 2026 — Acrylic on canvas, 50 × 70 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Impression & Space',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 70 cm',
+        main: 'images/8.jpg'
     })"
 >
 
@@ -1448,8 +1510,11 @@ Acrylic on canvas<br>
 <div
     class="work-item"
     onclick="openModal({
-        main: 'images/9.jpg',
-        caption: 'Traces of Memory, 2026 — Acrylic on canvas, 50 × 50 cm'
+        artist: 'SHENGPENG SONG',
+        title: 'Traces of Memory',
+        year: '2026',
+        specs: 'Acrylic on canvas<br>50 × 50 cm',
+        main: 'images/9.jpg'
     })"
 >
 
@@ -1522,8 +1587,11 @@ Figures
 <div
     class="img-container series-image"
     onclick="openModal({
-        main: 'images/10.jpg',
-        caption: 'Figures Series — SHENGPENG SONG'
+        artist: 'SHENGPENG SONG',
+        title: 'Figures Series',
+        year: 'Ongoing',
+        specs: 'Oil & Acrylic on canvas',
+        main: 'images/10.jpg'
     })"
 >
 
@@ -1564,8 +1632,11 @@ Inner Landscapes
 <div
     class="img-container series-image"
     onclick="openModal({
-        main: 'images/11.jpg',
-        caption: 'Inner Landscapes Series — SHENGPENG SONG'
+        artist: 'SHENGPENG SONG',
+        title: 'Inner Landscapes Series',
+        year: 'Ongoing',
+        specs: 'Oil & Acrylic on canvas',
+        main: 'images/11.jpg'
     })"
 >
 
@@ -1618,8 +1689,11 @@ In the Studio
 <div
     class="studio-item"
     onclick="openModal({
-        main: 'images/12.jpg',
-        caption: 'Large canvas in progress in studio'
+        artist: 'SHENGPENG SONG',
+        title: 'Studio Process',
+        year: '2026',
+        specs: 'Large canvas in progress in studio',
+        main: 'images/12.jpg'
     })"
 >
 
@@ -1645,8 +1719,11 @@ Large canvas in progress in studio
 <div
     class="studio-item"
     onclick="openModal({
-        main: 'images/13.jpg',
-        caption: 'Palette and material detail'
+        artist: 'SHENGPENG SONG',
+        title: 'Material Detail',
+        year: '2026',
+        specs: 'Palette and material detail in studio',
+        main: 'images/13.jpg'
     })"
 >
 
@@ -1672,8 +1749,11 @@ Palette and material detail
 <div
     class="studio-item"
     onclick="openModal({
-        main: 'images/14.jpg',
-        caption: 'Studio light and workspace setup'
+        artist: 'SHENGPENG SONG',
+        title: 'Workspace Setup',
+        year: '2026',
+        specs: 'Studio light and workspace',
+        main: 'images/14.jpg'
     })"
 >
 
@@ -1699,8 +1779,11 @@ Studio light and workspace
 <div
     class="studio-item"
     onclick="openModal({
-        main: 'images/15.jpg',
-        caption: 'Works on display in studio'
+        artist: 'SHENGPENG SONG',
+        title: 'Studio Display',
+        year: '2026',
+        specs: 'Works displayed in the studio',
+        main: 'images/15.jpg'
     })"
 >
 
@@ -2212,7 +2295,7 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =====================================================
-     IMAGE MODAL
+     WHITE CUBE GALLERY STYLE MODAL (顶级画廊侧栏详情面板)
 ===================================================== -->
 
 <div
@@ -2222,15 +2305,30 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
     role="dialog"
     aria-modal="true"
 >
-    <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
-    
-    <div class="modal-body">
-        <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+        
+        <!-- 左侧大图展示 -->
+        <div class="modal-left">
+            <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
+        </div>
+
+        <!-- 右侧作品信息与多角度导航 -->
+        <div class="modal-right">
+            <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
+            <div class="modal-title-text" id="modalTitle">Untitled</div>
+            <div class="modal-year" id="modalYear">2026</div>
+
+            <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
+
+            <div class="modal-specs" id="modalSpecs">
+                Acrylic on canvas<br>50 × 70 cm
+            </div>
+
+            <!-- 缩略图容器 -->
+            <div class="modal-thumbnails" id="modalThumbnails"></div>
+        </div>
     </div>
-
-    <div class="modal-thumbnails" id="modalThumbnails"></div>
-
-    <div class="modal-caption" id="modalCaption"></div>
 </div>
 
 
@@ -2278,36 +2376,53 @@ mobileLinks.forEach(function (link) {
     });
 });
 
-/* IMAGE LIGHTBOX MODAL */
+/* WHITE CUBE GALLERY MODAL SYSTEM */
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-const modalCaption = document.getElementById("modalCaption");
+const modalArtist = document.getElementById("modalArtist");
+const modalTitle = document.getElementById("modalTitle");
+const modalYear = document.getElementById("modalYear");
+const modalSpecs = document.getElementById("modalSpecs");
 const modalThumbnails = document.getElementById("modalThumbnails");
+const modalEnquireBtn = document.getElementById("modalEnquireBtn");
 
 function openModal(data) {
     modal.classList.add("active");
     document.body.classList.add("modal-open");
     
+    // 填充右侧文字信息
+    modalArtist.textContent = data.artist || "SHENGPENG SONG";
+    modalTitle.textContent = data.title || "Untitled";
+    modalYear.textContent = data.year || "2026";
+    modalSpecs.innerHTML = data.specs || "";
+    
+    // 更新垂询邮箱的主题
+    modalEnquireBtn.href = `mailto:spsong.art@gmail.com?subject=Enquiry%20-%20${encodeURIComponent(data.title || 'Artwork')}`;
+
+    // 默认显示主图
     modalImg.src = data.main;
-    modalCaption.textContent = data.caption || "";
     modalThumbnails.innerHTML = "";
 
-    if (data.detail || data.side) {
-        let thumbsHTML = `<button class="thumb-btn active" onclick="switchImage('${data.main}', this)">Main</button>`;
-        if (data.detail) {
-            thumbsHTML += `<button class="thumb-btn" onclick="switchImage('${data.detail}', this)">Detail</button>`;
-        }
-        if (data.side) {
-            thumbsHTML += `<button class="thumb-btn" onclick="switchImage('${data.side}', this)">Side View</button>`;
-        }
-        modalThumbnails.innerHTML = thumbsHTML;
-    }
-}
+    // 如果配置了多角度图（main, detail, side），生成底部缩略图
+    let thumbsArr = [];
+    if (data.main) thumbsArr.push({src: data.main, label: 'Main'});
+    if (data.detail) thumbsArr.push({src: data.detail, label: 'Detail'});
+    if (data.side) thumbsArr.push({src: data.side, label: 'Side'});
 
-function switchImage(src, btn) {
-    modalImg.src = src;
-    document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    if (thumbsArr.length > 1) {
+        thumbsArr.forEach((item, index) => {
+            const thumbImg = document.createElement("img");
+            thumbImg.src = item.src;
+            thumbImg.className = "modal-thumb" + (index === 0 ? " active" : "");
+            thumbImg.alt = item.label;
+            thumbImg.onclick = function() {
+                modalImg.src = item.src;
+                document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+                thumbImg.classList.add('active');
+            };
+            modalThumbnails.appendChild(thumbImg);
+        });
+    }
 }
 
 function closeModal() {
