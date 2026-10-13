@@ -80,7 +80,7 @@ button {
 
 
 /* =========================================================
-   GLOBAL IMAGE SYSTEM
+   GLOBAL IMAGE SYSTEM (消除外层灰色大框)
 ========================================================= */
 
 .img-container {
@@ -380,7 +380,7 @@ section {
 
 
 /* =========================================================
-   WORKS (透明底色，消除外层灰框)
+   WORKS
 ========================================================= */
 
 .works-grid {
@@ -398,13 +398,13 @@ section {
 .work-image {
     aspect-ratio: 4 / 5;
 
-    background: transparent;
+    background: transparent; /* 去除外层灰色背景框 */
 }
 
 .work-image img {
     object-fit: contain;
 
-    padding: 0;
+    padding: 0; /* 去除内边距 */
 }
 
 .work-item:hover .work-image img {
@@ -483,7 +483,7 @@ section {
 
     cursor: pointer;
 
-    background: transparent;
+    background: transparent; /* 去除外层灰色背景框 */
 }
 
 .series-image img {
@@ -528,7 +528,7 @@ section {
 .studio-item .img-container {
     aspect-ratio: 4 / 3;
 
-    background: transparent;
+    background: transparent; /* 去除外层灰色背景框 */
 }
 
 .studio-item img:hover {
@@ -1395,6 +1395,97 @@ Quietude Series
 
 <div class="work-meta">
 Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 07 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/8.jpg',
+        caption: 'Impression & Space, 2026 — Acrylic on canvas, 50 × 70 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/8.jpg"
+    alt="SHENGPENG SONG, Impression and Space, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Impression & Space
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- WORK 08 -->
+
+<div
+    class="work-item"
+    onclick="openModal({
+        main: 'images/9.jpg',
+        caption: 'Traces of Memory, 2026 — Acrylic on canvas, 50 × 50 cm'
+    })"
+>
+
+<div class="img-container work-image">
+
+<img
+    src="images/9.jpg"
+    alt="SHENGPENG SONG, Traces of Memory, 2026, acrylic on canvas"
+    loading="lazy"
+    decoding="async"
+>
+
+</div>
+
+
+<div class="work-info">
+
+<div class="work-title">
+Traces of Memory
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
 
 <!-- =====================================================
      SERIES
@@ -2121,7 +2212,7 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =====================================================
-     IMAGE MODAL (LIGHTBOX WITH MULTI-VIEW SWITCHER)
+     IMAGE MODAL
 ===================================================== -->
 
 <div
@@ -2137,7 +2228,6 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
         <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
     </div>
 
-    <!-- 动态多角度切换按钮容器 -->
     <div class="modal-thumbnails" id="modalThumbnails"></div>
 
     <div class="modal-caption" id="modalCaption"></div>
@@ -2188,7 +2278,7 @@ mobileLinks.forEach(function (link) {
     });
 });
 
-/* IMAGE LIGHTBOX MODAL WITH MULTI-VIEW SUPPORT */
+/* IMAGE LIGHTBOX MODAL */
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const modalCaption = document.getElementById("modalCaption");
@@ -2198,12 +2288,10 @@ function openModal(data) {
     modal.classList.add("active");
     document.body.classList.add("modal-open");
     
-    // 默认显示主图
     modalImg.src = data.main;
     modalCaption.textContent = data.caption || "";
     modalThumbnails.innerHTML = "";
 
-    // 如果该作品配置了 detail 或 side（多角度图），则动态生成切换按钮
     if (data.detail || data.side) {
         let thumbsHTML = `<button class="thumb-btn active" onclick="switchImage('${data.main}', this)">Main</button>`;
         if (data.detail) {
@@ -2239,4 +2327,4 @@ document.addEventListener("keydown", function (e) {
 </script>
 
 </body>
-</html>   
+</html>
