@@ -867,16 +867,19 @@ section {
 /* SHARE BUTTON */
 
 .modal-share {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
 
-    align-self: flex-start;
-    margin-top: 35px;
-    padding: 20px 0;
+    width: 100%;
+    align-self: stretch;
+
+    margin-top: 25px;
+    padding: 18px 0 8px;
 
     border: none;
-   
+    border-top: 1px solid var(--line);
+
     background: transparent;
     color: var(--text);
 
