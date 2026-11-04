@@ -664,15 +664,14 @@ section {
 
 
 /* =========================================================
-   WHITE CUBE GALLERY STYLE MODAL (顶级画廊详情面板)
+   ARTWORK DETAIL MODAL — SPLIT LAYOUT (FIRST WINDOW)
 ========================================================= */
 
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(251, 250, 247, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -680,7 +679,8 @@ section {
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 60px 80px;
+    padding: 50px 60px;
+    overflow-y: auto;
 }
 
 .modal.active {
@@ -691,17 +691,22 @@ section {
     width: 100%;
     max-width: 1300px;
     height: 85vh;
+
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 52px;
+
+    align-items: stretch;
     position: relative;
 }
 
-/* 左侧大图展示区 */
+/* LEFT — ARTWORK IMAGE */
+
 .modal-left {
-    width: 100%;
+    position: relative;
+    min-width: 0;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,17 +714,59 @@ section {
 }
 
 .modal-content {
+    display: block;
+    width: 100%;
+    height: 100%;
     max-width: 100%;
     max-height: 82vh;
     object-fit: contain;
 }
 
-/* 右侧信息与导航区 */
+/* MAGNIFIER — OUTSIDE THE IMAGE */
+
+.modal-zoom-btn {
+    position: absolute;
+    top: 8px;
+    right: -47px;
+
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+
+    background: #e9e7e2;
+    color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    cursor: pointer;
+    z-index: 5;
+
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.modal-zoom-btn:hover {
+    background: #dcd9d2;
+    transform: scale(1.06);
+}
+
+/* RIGHT — LIGHT GRAY INFORMATION PANEL */
+
 .modal-right {
+    width: 360px;
+    height: 100%;
+    box-sizing: border-box;
+
+    background: #f1efea;
+    padding: 45px 36px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 40px;
 }
 
 .modal-artist {
@@ -747,11 +794,14 @@ section {
     display: inline-block;
     align-self: flex-start;
     padding: 10px 24px;
+
     border: 1px solid var(--text);
     background: transparent;
+
     font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+
     cursor: pointer;
     transition: all 0.2s ease;
     margin-bottom: 35px;
@@ -766,45 +816,140 @@ section {
     font-size: 13px;
     line-height: 1.6;
     color: var(--muted);
+
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
+
     padding: 20px 0;
     margin-bottom: 30px;
 }
 
-/* 缩略图切换区 */
+/* DETAIL AND SIDE-VIEW THUMBNAILS */
+
 .modal-thumbnails {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .modal-thumb {
     width: 60px;
     height: 60px;
     object-fit: cover;
+
     border: 1px solid var(--line);
     cursor: pointer;
     opacity: 0.6;
+
     transition: all 0.2s ease;
 }
 
-.modal-thumb.active, .modal-thumb:hover {
+.modal-thumb.active,
+.modal-thumb:hover {
     opacity: 1;
     border-color: var(--text);
 }
 
+/* SHARE BUTTON */
+
+.modal-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    align-self: flex-start;
+    margin-top: 35px;
+    padding: 8px 0;
+
+    border: none;
+    background: transparent;
+    color: var(--text);
+
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+.modal-share:hover {
+    opacity: 0.55;
+}
+
+.modal-share-icon {
+    font-size: 17px;
+}
+
+/* CLOSE BUTTON — DETAIL MODAL */
+
 .modal-close {
     position: absolute;
-    top: -20px;
+    top: -35px;
     right: 0;
+
     font-size: 28px;
     cursor: pointer;
+
     background: none;
     border: none;
     color: var(--text);
+
     z-index: 10;
 }
 
+
+/* =========================================================
+   SECOND MODAL — IMAGE ONLY (SECOND WINDOW)
+========================================================= */
+
+.image-only-modal {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(20, 20, 20, 0.97);
+
+    z-index: 2200;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.image-only-modal.active {
+    display: flex;
+}
+
+.image-only-content {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 94vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+}
+
+.image-only-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2;
+}
 
 /* =========================================================
    FOOTER
@@ -962,23 +1107,57 @@ footer {
         gap: 8px;
     }
 
-    /* 移动端弹窗调整为单列 */
-    .modal {
-        padding: 20px;
-        align-items: flex-start;
-        overflow-y: auto;
-    }
+    /* MOBILE — DETAIL MODAL */
 
-    .modal-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        gap: 30px;
-        padding-top: 40px;
-    }
-
-    .modal-right {
-        padding-right: 0;
-    }
+   .modal {
+       padding: 25px 18px;
+       align-items: flex-start;
+       overflow-y: auto;
+   }
+   
+   .modal-container {
+       grid-template-columns: 1fr;
+       height: auto;
+       gap: 52px;
+       padding-top: 40px;
+   }
+   
+   .modal-left {
+       height: 55vh;
+       min-height: 280px;
+   }
+   
+   .modal-content {
+       max-height: 55vh;
+   }
+   
+   .modal-right {
+       width: 100%;
+       height: auto;
+       min-height: 300px;
+       padding: 35px 25px;
+   }
+   
+   .modal-zoom-btn {
+       top: calc(100% + 7px);
+       right: 0;
+   }
+   
+   /* MOBILE — IMAGE ONLY MODAL */
+   
+   .image-only-modal {
+       padding: 20px;
+   }
+   
+   .image-only-content {
+       max-width: 96vw;
+       max-height: 85vh;
+   }
+   
+   .image-only-close {
+       top: 15px;
+       right: 20px;
+   }
 }
 
 
@@ -1212,6 +1391,7 @@ Works
 <!-- WORK 01 (支持多图展示及侧面/细节切换) -->
 
 <div
+    id="work-01"
     class="work-item"
     onclick="openModal({
         artist: 'SHENGPENG SONG',
@@ -1221,7 +1401,7 @@ Works
         main: 'images/2.jpg',
         detail: 'images/2-detail.jpg',
         side: 'images/2-side.jpg'
-    })"
+    }, this.id)"
 >
 
 <div class="img-container work-image">
@@ -2295,7 +2475,7 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =====================================================
-     WHITE CUBE GALLERY STYLE MODAL (顶级画廊侧栏详情面板)
+     ARTWORK DETAIL MODAL
 ===================================================== -->
 
 <div
@@ -2306,31 +2486,142 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
     aria-modal="true"
 >
     <div class="modal-container">
-        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
-        
-        <!-- 左侧大图展示 -->
+
+        <button
+            class="modal-close"
+            onclick="closeModal()"
+            aria-label="Close artwork details"
+        >
+            ✕
+        </button>
+
+
+        <!-- LEFT: MAIN ARTWORK IMAGE -->
+
         <div class="modal-left">
-            <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
+
+            <img
+                class="modal-content"
+                id="modalImg"
+                src=""
+                alt="Enlarged artwork view"
+            >
+
+            <!-- MAGNIFIER BUTTON -->
+
+            <button
+                class="modal-zoom-btn"
+                onclick="openImageOnly(event)"
+                aria-label="View artwork full screen"
+                title="View full image"
+            >
+                ⌕
+            </button>
+
         </div>
 
-        <!-- 右侧作品信息与多角度导航 -->
+
+        <!-- RIGHT: ARTWORK INFORMATION -->
+
         <div class="modal-right">
-            <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
-            <div class="modal-title-text" id="modalTitle">Untitled</div>
-            <div class="modal-year" id="modalYear">2026</div>
 
-            <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
-
-            <div class="modal-specs" id="modalSpecs">
-                Acrylic on canvas<br>50 × 70 cm
+            <div
+                class="modal-artist"
+                id="modalArtist"
+            >
+                SHENGPENG SONG
             </div>
 
-            <!-- 缩略图容器 -->
-            <div class="modal-thumbnails" id="modalThumbnails"></div>
+
+            <div
+                class="modal-title-text"
+                id="modalTitle"
+            >
+                Untitled
+            </div>
+
+
+            <div
+                class="modal-year"
+                id="modalYear"
+            >
+                2026
+            </div>
+
+
+            <a
+                id="modalEnquireBtn"
+                href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork"
+                class="enquire-btn"
+            >
+                Enquire
+            </a>
+
+
+            <div
+                class="modal-specs"
+                id="modalSpecs"
+            >
+                Acrylic on canvas<br>
+                50 × 70 cm
+            </div>
+
+
+            <!-- DETAIL AND SIDE-VIEW THUMBNAILS -->
+
+            <div
+                class="modal-thumbnails"
+                id="modalThumbnails"
+            ></div>
+
+
+            <!-- SHARE BUTTON -->
+
+            <button
+                class="modal-share"
+                id="modalShareBtn"
+                onclick="shareArtwork()"
+            >
+                <span class="modal-share-icon">↗</span>
+                <span id="shareButtonText">Share</span>
+            </button>
+
         </div>
+
     </div>
 </div>
 
+
+
+<!-- =====================================================
+     SECOND MODAL — FULL-SCREEN IMAGE ONLY
+===================================================== -->
+
+<div
+    class="image-only-modal"
+    id="imageOnlyModal"
+    onclick="if(event.target === this) closeImageOnly()"
+    role="dialog"
+    aria-modal="true"
+>
+
+    <button
+        class="image-only-close"
+        onclick="closeImageOnly()"
+        aria-label="Close full-screen image"
+    >
+        ✕
+    </button>
+
+
+    <img
+        class="image-only-content"
+        id="imageOnlyImg"
+        src=""
+        alt="Full-screen artwork"
+    >
+
+</div>
 
 
 <!-- =====================================================
@@ -2376,69 +2667,343 @@ mobileLinks.forEach(function (link) {
     });
 });
 
-/* WHITE CUBE GALLERY MODAL SYSTEM */
+/* =========================================================
+   ARTWORK MODAL SYSTEM
+========================================================= */
+
 const modal = document.getElementById("imageModal");
+
 const modalImg = document.getElementById("modalImg");
+
 const modalArtist = document.getElementById("modalArtist");
+
 const modalTitle = document.getElementById("modalTitle");
+
 const modalYear = document.getElementById("modalYear");
+
 const modalSpecs = document.getElementById("modalSpecs");
+
 const modalThumbnails = document.getElementById("modalThumbnails");
+
 const modalEnquireBtn = document.getElementById("modalEnquireBtn");
 
-function openModal(data) {
-    modal.classList.add("active");
-    document.body.classList.add("modal-open");
-    
-    // 填充右侧文字信息
-    modalArtist.textContent = data.artist || "SHENGPENG SONG";
-    modalTitle.textContent = data.title || "Untitled";
-    modalYear.textContent = data.year || "2026";
-    modalSpecs.innerHTML = data.specs || "";
-    
-    // 更新垂询邮箱的主题
-    modalEnquireBtn.href = `mailto:spsong.art@gmail.com?subject=Enquiry%20-%20${encodeURIComponent(data.title || 'Artwork')}`;
+const modalShareBtn = document.getElementById("modalShareBtn");
 
-    // 默认显示主图
-    modalImg.src = data.main;
+const shareButtonText = document.getElementById("shareButtonText");
+
+
+/* =========================================================
+   SECOND MODAL — IMAGE ONLY
+========================================================= */
+
+const imageOnlyModal = document.getElementById("imageOnlyModal");
+
+const imageOnlyImg = document.getElementById("imageOnlyImg");
+
+
+/* CURRENT ARTWORK */
+
+let currentWorkId = null;
+
+
+/* =========================================================
+   OPEN ARTWORK DETAIL MODAL
+========================================================= */
+
+function openModal(data, workId) {
+
+    currentWorkId = workId || null;
+
+    modal.classList.add("active");
+
+    document.body.classList.add("modal-open");
+
+
+    // Artwork information
+
+    modalArtist.textContent =
+        data.artist || "SHENGPENG SONG";
+
+    modalTitle.textContent =
+        data.title || "Untitled";
+
+    modalYear.textContent =
+        data.year || "2026";
+
+    modalSpecs.innerHTML =
+        data.specs || "";
+
+
+    // Enquiry email
+
+    modalEnquireBtn.href =
+        `mailto:spsong.art@gmail.com?subject=Enquiry%20-%20${encodeURIComponent(data.title || "Artwork")}`;
+
+
+    // Reset Share button
+
+    shareButtonText.textContent = "Share";
+
+
+    // Display main artwork image
+
+    modalImg.src = data.main || "";
+
+
+    // Clear previous thumbnails
+
     modalThumbnails.innerHTML = "";
 
-    // 如果配置了多角度图（main, detail, side），生成底部缩略图
-    let thumbsArr = [];
-    if (data.main) thumbsArr.push({src: data.main, label: 'Main'});
-    if (data.detail) thumbsArr.push({src: data.detail, label: 'Detail'});
-    if (data.side) thumbsArr.push({src: data.side, label: 'Side'});
 
-    if (thumbsArr.length > 1) {
-        thumbsArr.forEach((item, index) => {
-            const thumbImg = document.createElement("img");
-            thumbImg.src = item.src;
-            thumbImg.className = "modal-thumb" + (index === 0 ? " active" : "");
-            thumbImg.alt = item.label;
-            thumbImg.onclick = function() {
-                modalImg.src = item.src;
-                document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
-                thumbImg.classList.add('active');
-            };
-            modalThumbnails.appendChild(thumbImg);
+    // Prepare available images
+
+    let thumbsArr = [];
+
+    if (data.main) {
+        thumbsArr.push({
+            src: data.main,
+            label: "Main"
         });
     }
+
+    if (data.detail) {
+        thumbsArr.push({
+            src: data.detail,
+            label: "Detail"
+        });
+    }
+
+    if (data.side) {
+        thumbsArr.push({
+            src: data.side,
+            label: "Side"
+        });
+    }
+
+
+    // Generate thumbnails
+
+    if (thumbsArr.length > 1) {
+
+        thumbsArr.forEach((item, index) => {
+
+            const thumbImg = document.createElement("img");
+
+            thumbImg.src = item.src;
+
+            thumbImg.className =
+                "modal-thumb" + (index === 0 ? " active" : "");
+
+            thumbImg.alt = item.label;
+
+            thumbImg.onclick = function () {
+
+                modalImg.src = item.src;
+
+                document.querySelectorAll(".modal-thumb")
+                    .forEach(t => t.classList.remove("active"));
+
+                thumbImg.classList.add("active");
+
+            };
+
+            modalThumbnails.appendChild(thumbImg);
+
+        });
+
+    }
+
 }
+
+
+/* =========================================================
+   CLOSE ARTWORK DETAIL MODAL
+========================================================= */
 
 function closeModal() {
+
+    closeImageOnly();
+
     modal.classList.remove("active");
+
     document.body.classList.remove("modal-open");
+
     modalImg.src = "";
+
     modalThumbnails.innerHTML = "";
+
+    currentWorkId = null;
+
 }
 
-/* ESCAPE KEY TO CLOSE MODAL */
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        closeModal();
+
+/* =========================================================
+   OPEN IMAGE-ONLY FULL-SCREEN MODAL
+========================================================= */
+
+function openImageOnly(event) {
+
+    // Prevent other click events
+
+    event.stopPropagation();
+
+
+    // Use the currently displayed image.
+    // This also works if the visitor selected a detail
+    // or side-view thumbnail.
+
+    if (!modalImg.src) return;
+
+    imageOnlyImg.src = modalImg.src;
+
+    imageOnlyModal.classList.add("active");
+
+}
+
+
+/* =========================================================
+   CLOSE IMAGE-ONLY MODAL
+========================================================= */
+
+function closeImageOnly() {
+
+    imageOnlyModal.classList.remove("active");
+
+    imageOnlyImg.src = "";
+
+    // Do not close the artwork detail modal.
+    // The visitor returns to the same artwork.
+
+}
+
+
+/* =========================================================
+   SHARE — COPY DIRECT ARTWORK LINK
+========================================================= */
+
+async function shareArtwork() {
+
+    if (!currentWorkId) return;
+
+
+    // Create a direct link to this artwork
+
+    const directLink =
+        window.location.href.split("#")[0] + "#" + currentWorkId;
+
+
+    try {
+
+        // Modern clipboard method
+
+        try {
+
+            await navigator.clipboard.writeText(directLink);
+
+        } catch (clipboardError) {
+
+            // Fallback for browsers without clipboard access
+
+            const temporaryInput =
+                document.createElement("textarea");
+
+            temporaryInput.value = directLink;
+
+            temporaryInput.style.position = "fixed";
+
+            temporaryInput.style.opacity = "0";
+
+            document.body.appendChild(temporaryInput);
+
+            temporaryInput.select();
+
+            const copied = document.execCommand("copy");
+
+            temporaryInput.remove();
+
+            if (!copied) {
+                throw new Error("Clipboard copy failed");
+            }
+
+        }
+
+
+        // Show temporary confirmation
+
+        shareButtonText.textContent = "Copied!";
+
+        setTimeout(() => {
+
+            shareButtonText.textContent = "Share";
+
+        }, 1800);
+
+
+    } catch (error) {
+
+        shareButtonText.textContent = "Copy failed";
+
+        setTimeout(() => {
+
+            shareButtonText.textContent = "Share";
+
+        }, 1800);
+
+        console.error("Unable to copy artwork link:", error);
+
     }
+
+}
+
+
+/* =========================================================
+   OPEN ARTWORK DIRECTLY FROM A SHARED LINK
+========================================================= */
+
+// Example:
+// https://shengpeng.de/#work-01
+
+const initialWorkId =
+    window.location.hash.substring(1);
+
+if (/^work-\d{2}$/.test(initialWorkId)) {
+
+    const linkedArtwork =
+        document.getElementById(initialWorkId);
+
+    if (linkedArtwork) {
+
+        linkedArtwork.click();
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY — CLOSE TOPMOST MODAL FIRST
+========================================================= */
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+
+        if (imageOnlyModal.classList.contains("active")) {
+
+            closeImageOnly();
+
+        } else if (modal.classList.contains("active")) {
+
+            closeModal();
+
+        }
+
+    }
+
 });
 
+
+   
 </script>
 
 </body>
