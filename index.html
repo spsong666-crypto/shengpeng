@@ -664,7 +664,7 @@ section {
 
 
 /* =========================================================
-   WHITE CUBE GALLERY STYLE MODAL (左侧大图+右上角放大镜+右侧浅灰色面板)
+   WHITE CUBE STYLE MODAL (白立方画廊级别标准弹窗界面)
 ========================================================= */
 
 .modal {
@@ -696,7 +696,7 @@ section {
     position: relative;
     background: var(--bg);
     border: 1px solid var(--line);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
 }
 
 /* 左侧大图展示区 */
@@ -708,9 +708,10 @@ section {
     justify-content: center;
     position: relative;
     padding: 40px;
+    background: var(--bg);
 }
 
-/* 左上角放大镜图标按钮 */
+/* 左上角放大镜图标按钮 (Zoom) */
 .zoom-trigger-btn {
     position: absolute;
     top: 24px;
@@ -723,7 +724,7 @@ section {
     align-items: center;
     gap: 6px;
     font-size: 11px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: color 0.2s ease;
     z-index: 5;
@@ -747,51 +748,56 @@ section {
     object-fit: contain;
 }
 
-/* 右侧浅灰色信息与导航面板 */
+/* 右侧浅灰色信息与导航面板 (White Cube Surface) */
 .modal-right {
     background: var(--surface); /* 浅灰色背景 */
     padding: 60px 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     border-left: 1px solid var(--line);
     position: relative;
 }
 
+.modal-header-group {
+    display: flex;
+    flex-direction: column;
+}
+
 .modal-artist {
-    font-size: 16px;
-    letter-spacing: 0.08em;
+    font-size: 20px;
+    letter-spacing: 0.04em;
     font-weight: 500;
-    margin-bottom: 8px;
-    color: var(--muted);
+    margin-bottom: 4px;
+    color: var(--text);
 }
 
 .modal-title-text {
-    font-size: 28px;
+    font-size: 22px;
+    font-style: italic;
     font-weight: 400;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--text);
-    letter-spacing: -0.01em;
 }
 
 .modal-year {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .enquire-btn {
     display: inline-block;
     align-self: flex-start;
-    padding: 11px 26px;
+    padding: 11px 28px;
     border: 1px solid var(--text);
     background: transparent;
     font-size: 11px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .enquire-btn:hover {
@@ -806,18 +812,19 @@ section {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     padding: 20px 0;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-/* 缩略图切换区 */
+/* 多图缩略图导航容器 */
 .modal-thumbnails {
     display: flex;
     gap: 12px;
+    margin-bottom: 25px;
 }
 
 .modal-thumb {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border: 1px solid var(--line);
     cursor: pointer;
@@ -828,6 +835,34 @@ section {
 .modal-thumb.active, .modal-thumb:hover {
     opacity: 1;
     border-color: var(--text);
+}
+
+/* 底部 Share 分享与关闭控制区 */
+.modal-bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.share-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.share-btn:hover {
+    color: var(--text);
 }
 
 .modal-close {
@@ -1004,7 +1039,7 @@ footer {
         gap: 8px;
     }
 
-    /* 移动端弹窗响应式调整 */
+    /* 移动端响应式面板 */
     .modal {
         padding: 10px;
         align-items: flex-start;
@@ -2230,7 +2265,7 @@ University for the Creative Arts, Folkestone, United Kingdom
 2013
 </div>
 
-<div class="cv-title`">
+<div class="cv-title">
 Seminar Presentation Exhibition — Group Exhibition
 </div>
 
@@ -2342,7 +2377,7 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =====================================================
-     WHITE CUBE GALLERY STYLE MODAL (含左上角放大图标与右侧浅灰色面板)
+     WHITE CUBE GALLERY STYLE MODAL (白立方画廊标准弹窗)
 ===================================================== -->
 
 <div
@@ -2355,29 +2390,39 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
     <div class="modal-container">
         <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
         
-        <!-- 左侧大图展示区 (带有左上角放大/全屏查看图标) -->
+        <!-- 左侧大图展示区 (含 Zoom 按钮) -->
         <div class="modal-left">
-            <button class="zoom-trigger-btn" onclick="triggerZoom()" title="Click to zoom image">
+            <button class="zoom-trigger-btn" onclick="triggerZoom()" title="Click to view full image">
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                 Zoom
             </button>
             <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
         </div>
 
-        <!-- 右侧浅灰色信息与导航区 -->
+        <!-- 右侧浅灰色面板 (White Cube 标准排版) -->
         <div class="modal-right">
-            <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
-            <div class="modal-title-text" id="modalTitle">Untitled</div>
-            <div class="modal-year" id="modalYear">2026</div>
+            <div class="modal-header-group">
+                <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
+                <div class="modal-title-text" id="modalTitle">Untitled</div>
+                <div class="modal-year" id="modalYear">2026</div>
 
-            <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
+                <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
 
-            <div class="modal-specs" id="modalSpecs">
-                Acrylic on canvas<br>50 × 70 cm
+                <div class="modal-specs" id="modalSpecs">
+                    Acrylic on canvas<br>50 × 70 cm
+                </div>
+
+                <!-- 多角度缩略图区 -->
+                <div class="modal-thumbnails" id="modalThumbnails"></div>
             </div>
 
-            <!-- 缩略图容器 -->
-            <div class="modal-thumbnails" id="modalThumbnails"></div>
+            <!-- 底部 Share 分享功能 -->
+            <div class="modal-bottom-actions">
+                <button class="share-btn" onclick="shareArtwork()">
+                    ✉ Share via Email
+                </button>
+                <div>White Cube Standard</div>
+            </div>
         </div>
     </div>
 </div>
@@ -2437,10 +2482,10 @@ const modalSpecs = document.getElementById("modalSpecs");
 const modalThumbnails = document.getElementById("modalThumbnails");
 const modalEnquireBtn = document.getElementById("modalEnquireBtn");
 
-let currentImageData = null;
+let currentArtwork = null;
 
 function openModal(data) {
-    currentImageData = data;
+    currentArtwork = data;
     modal.classList.add("active");
     document.body.classList.add("modal-open");
     
@@ -2475,10 +2520,17 @@ function openModal(data) {
     }
 }
 
-/* 点击左上角 Zoom 按钮可再次在浏览器新标签页中查看高清大图 */
 function triggerZoom() {
     if (modalImg.src) {
         window.open(modalImg.src, '_blank');
+    }
+}
+
+function shareArtwork() {
+    if (currentArtwork) {
+        const title = currentArtwork.title || 'Artwork';
+        const url = window.location.href;
+        window.location.href = `mailto:?subject=${encodeURIComponent('SHENGPENG SONG — ' + title)}&body=${encodeURIComponent('Check out this artwork by SHENGPENG SONG: ' + url)}`;
     }
 }
 
