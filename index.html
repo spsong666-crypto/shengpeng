@@ -30,6 +30,7 @@
     --text: #222222;
     --muted: #77736d;
     --line: #dedbd5;
+    --placeholder: #e8e5df;
     --max-width: 1440px;
 }
 
@@ -379,20 +380,15 @@ section {
 
 
 /* =========================================================
-   WORKS / ARTWORKS (白立方标准艺术品网格布局)
+   WORKS
 ========================================================= */
-
-.works-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 30px;
-}
 
 .works-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 70px 32px;
+
+    gap: 90px 32px;
 }
 
 .work-item {
@@ -401,36 +397,46 @@ section {
 
 .work-image {
     aspect-ratio: 4 / 5;
+
     background: transparent;
 }
 
 .work-image img {
     object-fit: contain;
+
     padding: 0;
 }
 
 .work-item:hover .work-image img {
     transform: scale(1.015);
+
     opacity: 0.95;
 }
 
 .work-info {
-    padding-top: 12px;
+    padding-top: 15px;
+
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 .work-title {
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--text);
+    font-size: 13px;
+
+    font-weight: 500;
 }
 
 .work-meta {
     font-size: 12px;
+
     color: var(--muted);
+
+    text-align: right;
+
+    line-height: 1.5;
 }
 
 
@@ -658,7 +664,7 @@ section {
 
 
 /* =========================================================
-   WHITE CUBE ARTWORK DETAIL MODAL (100% 对标白立方官方详情页版面)
+   WHITE CUBE GALLERY STYLE MODAL (顶级画廊详情面板)
 ========================================================= */
 
 .modal {
@@ -668,13 +674,13 @@ section {
     width: 100vw;
     height: 100vh;
     background: rgba(251, 250, 247, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 2000;
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 40px 60px;
+    padding: 60px 80px;
 }
 
 .modal.active {
@@ -683,12 +689,13 @@ section {
 
 .modal-container {
     width: 100%;
-    max-width: 1400px;
-    height: 88vh;
+    max-width: 1300px;
+    height: 85vh;
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
     position: relative;
-    background: transparent;
 }
 
 /* 左侧大图展示区 */
@@ -696,151 +703,58 @@ section {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    padding: 40px;
-}
-
-/* 左上角放大镜 Zoom 按钮 */
-.zoom-trigger-btn {
-    position: absolute;
-    top: 24px;
-    left: 24px;
     background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
-    z-index: 5;
-}
-
-.zoom-trigger-btn:hover {
-    color: var(--text);
-}
-
-.zoom-trigger-btn svg {
-    width: 16px;
-    height: 16px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.5;
-}
-
-.modal-content-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 65vh;
 }
 
 .modal-content {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 82vh;
     object-fit: contain;
 }
 
-/* 白立方官方同款提示文案与底部缩略图栏 */
-.modal-gallery-nav-wrap {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-top: 20px;
-}
-
-.modal-hint-text {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-}
-
-.modal-thumbnails {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-}
-
-.modal-thumb {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border: 1px solid var(--line);
-    cursor: pointer;
-    opacity: 0.4;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-}
-
-.modal-thumb.active, .modal-thumb:hover {
-    opacity: 1;
-    border-color: var(--text);
-}
-
-/* 右侧浅灰色面板（对应白立方右侧面板） */
+/* 右侧信息与导航区 */
 .modal-right {
-    background: var(--surface);
-    padding: 60px 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-left: 1px solid var(--line);
-    position: relative;
+    justify-content: center;
+    padding-right: 40px;
 }
 
-.modal-header-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-artist-link {
-    font-size: 17px;
-    letter-spacing: 0.08em;
+.modal-artist {
+    font-size: 18px;
+    letter-spacing: 0.05em;
     font-weight: 500;
-    margin-bottom: 8px;
-    color: var(--text);
-    text-transform: uppercase;
-}
-
-.modal-title-row {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 24px;
+    margin-bottom: 6px;
 }
 
 .modal-title-text {
-    font-size: 24px;
+    font-size: 26px;
     font-style: italic;
     font-weight: 400;
+    margin-bottom: 10px;
     color: var(--text);
 }
 
 .modal-year {
-    font-size: 18px;
+    font-size: 14px;
     color: var(--muted);
+    margin-bottom: 30px;
 }
 
 .enquire-btn {
     display: inline-block;
     align-self: flex-start;
-    padding: 12px 32px;
+    padding: 10px 24px;
     border: 1px solid var(--text);
     background: transparent;
-    font-size: 11px;
-    letter-spacing: 0.14em;
+    font-size: 12px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .enquire-btn:hover {
@@ -850,54 +764,45 @@ section {
 
 .modal-specs {
     font-size: 13px;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--muted);
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 22px 0;
+    padding: 20px 0;
+    margin-bottom: 30px;
 }
 
-/* 底部 Share 分享区 */
-.modal-bottom-actions {
+/* 缩略图切换区 */
+.modal-thumbnails {
     display: flex;
-    gap: 24px;
-    border-top: 1px solid var(--line);
-    padding-top: 20px;
+    gap: 12px;
 }
 
-.share-btn {
-    background: none;
-    border: none;
+.modal-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid var(--line);
     cursor: pointer;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
+    opacity: 0.6;
+    transition: all 0.2s ease;
 }
 
-.share-btn:hover {
-    color: var(--text);
+.modal-thumb.active, .modal-thumb:hover {
+    opacity: 1;
+    border-color: var(--text);
 }
 
 .modal-close {
     position: absolute;
-    top: 24px;
-    right: 30px;
-    font-size: 24px;
+    top: -20px;
+    right: 0;
+    font-size: 28px;
     cursor: pointer;
     background: none;
     border: none;
     color: var(--text);
     z-index: 10;
-    transition: opacity 0.2s ease;
-}
-
-.modal-close:hover {
-    opacity: 0.5;
 }
 
 
@@ -1002,7 +907,13 @@ footer {
     }
 
     .work-info {
+        flex-direction: column;
+
         gap: 4px;
+    }
+
+    .work-meta {
+        text-align: left;
     }
 
     .work-image {
@@ -1051,8 +962,9 @@ footer {
         gap: 8px;
     }
 
+    /* 移动端弹窗调整为单列 */
     .modal {
-        padding: 10px;
+        padding: 20px;
         align-items: flex-start;
         overflow-y: auto;
     }
@@ -1060,16 +972,12 @@ footer {
     .modal-container {
         grid-template-columns: 1fr;
         height: auto;
-    }
-
-    .modal-left {
-        padding: 40px 20px 20px;
+        gap: 30px;
+        padding-top: 40px;
     }
 
     .modal-right {
-        padding: 40px 30px;
-        border-left: none;
-        border-top: 1px solid var(--line);
+        padding-right: 0;
     }
 }
 
@@ -1284,27 +1192,24 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <!-- =====================================================
-     WORKS / ARTWORKS
+     WORKS
 ===================================================== -->
 
 <section id="works">
 
-<div class="works-header-row">
-    <h2 class="section-title" style="margin-bottom: 0;">
-        Artworks
-    </h2>
-    <div style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); cursor: pointer;">
-        View all
-    </div>
+<div class="section-label">
+02 — Works
 </div>
 
-<div style="border-bottom: 1px solid var(--line); margin-top: 25px; margin-bottom: 60px;"></div>
+<h2 class="section-title">
+Works
+</h2>
 
 
 <div class="works-grid">
 
 
-<!-- WORK 01 -->
+<!-- WORK 01 (支持多图展示及侧面/细节切换) -->
 
 <div
     class="work-item"
@@ -1332,8 +1237,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Untitled</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1366,8 +1279,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Untitled</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1400,8 +1321,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Portrait Study</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Portrait Study
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1434,8 +1363,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Untitled</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Untitled
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1468,8 +1405,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Mindfulness Study</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Mindfulness Study
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1502,8 +1447,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Quietude Series</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Quietude Series
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1536,8 +1489,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Impression & Space</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Impression & Space
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 70 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -1570,8 +1531,16 @@ His work explores the space between the visible and the inner world, allowing fi
 
 
 <div class="work-info">
-    <div class="work-title">Traces of Memory</div>
-    <div class="work-meta">2026</div>
+
+<div class="work-title">
+Traces of Memory
+</div>
+
+<div class="work-meta">
+Acrylic on canvas<br>
+50 × 50 cm · 2026
+</div>
+
 </div>
 
 </div>
@@ -2326,7 +2295,7 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
 
 
 <!-- =====================================================
-     WHITE CUBE ARTWORK DETAIL MODAL (白立方标准弹窗详情页)
+     WHITE CUBE GALLERY STYLE MODAL (顶级画廊侧栏详情面板)
 ===================================================== -->
 
 <div
@@ -2339,49 +2308,25 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
     <div class="modal-container">
         <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
         
-        <!-- 左侧大图与缩略图导航区 -->
+        <!-- 左侧大图展示 -->
         <div class="modal-left">
-            <button class="zoom-trigger-btn" onclick="triggerZoom()" title="Click to view full image">
-                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                Zoom
-            </button>
-
-            <div class="modal-content-wrapper">
-                <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
-            </div>
-
-            <div class="modal-gallery-nav-wrap">
-                <div class="modal-hint-text">Selecting a thumbnail updates the main image.</div>
-                <div class="modal-thumbnails" id="modalThumbnails"></div>
-            </div>
+            <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
         </div>
 
-        <!-- 右侧浅灰色面板（白立方标准排版） -->
+        <!-- 右侧作品信息与多角度导航 -->
         <div class="modal-right">
-            <div class="modal-header-group">
-                <div class="modal-artist-link" id="modalArtist">SHENGPENG SONG</div>
-                
-                <div class="modal-title-row">
-                    <span class="modal-title-text" id="modalTitle">Untitled</span>
-                    <span class="modal-year" id="modalYear">2026</span>
-                </div>
+            <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
+            <div class="modal-title-text" id="modalTitle">Untitled</div>
+            <div class="modal-year" id="modalYear">2026</div>
 
-                <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
+            <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
 
-                <div class="modal-specs" id="modalSpecs">
-                    Acrylic on canvas<br>50 × 70 cm
-                </div>
+            <div class="modal-specs" id="modalSpecs">
+                Acrylic on canvas<br>50 × 70 cm
             </div>
 
-            <!-- 底部 Share 分享区 -->
-            <div class="modal-bottom-actions">
-                <button class="share-btn" onclick="shareEmail()">
-                    ✉ Email
-                </button>
-                <button class="share-btn" onclick="shareWhatsApp()">
-                    💬 WhatsApp
-                </button>
-            </div>
+            <!-- 缩略图容器 -->
+            <div class="modal-thumbnails" id="modalThumbnails"></div>
         </div>
     </div>
 </div>
@@ -2431,7 +2376,7 @@ mobileLinks.forEach(function (link) {
     });
 });
 
-/* WHITE CUBE ARTWORK DETAIL MODAL SYSTEM */
+/* WHITE CUBE GALLERY MODAL SYSTEM */
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const modalArtist = document.getElementById("modalArtist");
@@ -2441,23 +2386,24 @@ const modalSpecs = document.getElementById("modalSpecs");
 const modalThumbnails = document.getElementById("modalThumbnails");
 const modalEnquireBtn = document.getElementById("modalEnquireBtn");
 
-let currentArtwork = null;
-
 function openModal(data) {
-    currentArtwork = data;
     modal.classList.add("active");
     document.body.classList.add("modal-open");
     
+    // 填充右侧文字信息
     modalArtist.textContent = data.artist || "SHENGPENG SONG";
     modalTitle.textContent = data.title || "Untitled";
     modalYear.textContent = data.year || "2026";
     modalSpecs.innerHTML = data.specs || "";
     
+    // 更新垂询邮箱的主题
     modalEnquireBtn.href = `mailto:spsong.art@gmail.com?subject=Enquiry%20-%20${encodeURIComponent(data.title || 'Artwork')}`;
 
+    // 默认显示主图
     modalImg.src = data.main;
     modalThumbnails.innerHTML = "";
 
+    // 如果配置了多角度图（main, detail, side），生成底部缩略图
     let thumbsArr = [];
     if (data.main) thumbsArr.push({src: data.main, label: 'Main'});
     if (data.detail) thumbsArr.push({src: data.detail, label: 'Detail'});
@@ -2476,28 +2422,6 @@ function openModal(data) {
             };
             modalThumbnails.appendChild(thumbImg);
         });
-    }
-}
-
-function triggerZoom() {
-    if (modalImg.src) {
-        window.open(modalImg.src, '_blank');
-    }
-}
-
-function shareEmail() {
-    if (currentArtwork) {
-        const title = currentArtwork.title || 'Artwork';
-        const url = window.location.href;
-        window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`;
-    }
-}
-
-function shareWhatsApp() {
-    if (currentArtwork) {
-        const title = currentArtwork.title || 'Artwork';
-        const url = window.location.href;
-        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + '\n' + url)}`, '_blank');
     }
 }
 
