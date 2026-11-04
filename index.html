@@ -664,11 +664,6 @@ section {
 
 
 /* =========================================================
-   ARTWORK DETAIL MODAL — SPLIT LAYOUT (FIRST WINDOW)
-========================================================= */
-
-
-/* =========================================================
    ARTWORK DETAIL MODAL — FULL SCREEN 70/30 SPLIT
 ========================================================= */
 
@@ -678,12 +673,12 @@ section {
     width: 100%;
     height: 100%;
 
-    /* White left 70%, light gray right 30% */
+    /* White left 65%, light gray right 35% */
     background: linear-gradient(
         to right,
         #fbfaf7 0%,
-        #fbfaf7 70%,
-        #f1efea 70%,
+        #fbfaf7 65%,
+        #f1efea 65%,
         #f1efea 100%
     );
 
@@ -706,14 +701,14 @@ section {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 6.5fr) minmax(0, 3.5fr);
     gap: 0;
 
     align-items: stretch;
     position: relative;
 }
 
-/* LEFT 70% — ARTWORK AREA */
+/* LEFT 65% — ARTWORK AREA */
 
 .modal-left {
     position: relative;
@@ -758,7 +753,7 @@ section {
     align-items: center;
     justify-content: center;
 
-    font-size: 19px;
+    font-size: 23px;
     cursor: pointer;
     z-index: 5;
 
@@ -771,7 +766,7 @@ section {
     transform: scale(1.06);
 }
 
-/* RIGHT 30% — FULL HEIGHT LIGHT GRAY AREA */
+/* RIGHT 35% — FULL HEIGHT LIGHT GRAY AREA */
 
 .modal-right {
     width: 100%;
@@ -878,9 +873,10 @@ section {
 
     align-self: flex-start;
     margin-top: 35px;
-    padding: 8px 0;
+    padding: 20px 0;
 
-    border: none;
+    border-top: 1px solid var(--line);
+   
     background: transparent;
     color: var(--text);
 
@@ -896,7 +892,10 @@ section {
 }
 
 .modal-share-icon {
-    font-size: 17px;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    flex-shrink: 0;
 }
 
 /* CLOSE BUTTON — DETAIL MODAL */
@@ -2619,7 +2618,25 @@ For gallery enquiries, exhibition opportunities, studio visits and professional 
                 id="modalShareBtn"
                 onclick="shareArtwork()"
             >
-                <span class="modal-share-icon">↗</span>
+               
+            <svg
+                class="modal-share-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                >
+                <path
+                 d="M8.6 10.5L15.4 6.5M8.6 13.5L15.4 17.5"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2.5"
+                 stroke-linecap="round"
+                />
+                <circle cx="6" cy="12" r="3" fill="currentColor"/>
+                <circle cx="18" cy="5" r="3" fill="currentColor"/>
+                <circle cx="18" cy="19" r="3" fill="currentColor"/>
+             </svg>
+
                 <span id="shareButtonText">Share</span>
             </button>
 
