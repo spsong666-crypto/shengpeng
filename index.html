@@ -667,19 +667,32 @@ section {
    ARTWORK DETAIL MODAL — SPLIT LAYOUT (FIRST WINDOW)
 ========================================================= */
 
+
+/* =========================================================
+   ARTWORK DETAIL MODAL — FULL SCREEN 70/30 SPLIT
+========================================================= */
+
 .modal {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(251, 250, 247, 0.98);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
+    /* White left 70%, light gray right 30% */
+    background: linear-gradient(
+        to right,
+        #fbfaf7 0%,
+        #fbfaf7 70%,
+        #f1efea 70%,
+        #f1efea 100%
+    );
+
     z-index: 2000;
     display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 60px;
+    align-items: stretch;
+    justify-content: stretch;
+
+    padding: 0;
     overflow-y: auto;
 }
 
@@ -689,28 +702,32 @@ section {
 
 .modal-container {
     width: 100%;
-    max-width: 1300px;
-    height: 85vh;
+    max-width: none;
+    height: 100vh;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 52px;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 0;
 
     align-items: stretch;
     position: relative;
 }
 
-/* LEFT — ARTWORK IMAGE */
+/* LEFT 70% — ARTWORK AREA */
 
 .modal-left {
     position: relative;
     min-width: 0;
+    width: 100%;
     height: 100%;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
+
+    background: #fbfaf7;
+    padding: 45px;
 }
 
 .modal-content {
@@ -722,12 +739,12 @@ section {
     object-fit: contain;
 }
 
-/* MAGNIFIER — OUTSIDE THE IMAGE */
+/* MAGNIFIER — INSIDE THE ARTWORK AREA */
 
 .modal-zoom-btn {
     position: absolute;
-    top: 8px;
-    right: -47px;
+    top: 20px;
+    right: 20px;
 
     width: 38px;
     height: 38px;
@@ -754,11 +771,12 @@ section {
     transform: scale(1.06);
 }
 
-/* RIGHT — LIGHT GRAY INFORMATION PANEL */
+/* RIGHT 30% — FULL HEIGHT LIGHT GRAY AREA */
 
 .modal-right {
-    width: 360px;
+    width: 100%;
     height: 100%;
+    min-width: 0;
     box-sizing: border-box;
 
     background: #f1efea;
@@ -768,6 +786,7 @@ section {
     flex-direction: column;
     justify-content: center;
 }
+
 
 .modal-artist {
     font-size: 18px;
@@ -1109,29 +1128,29 @@ footer {
 
     /* MOBILE — DETAIL MODAL */
 
-   .modal {
+    .modal {
+       background: #fbfaf7;
        padding: 25px 18px;
        align-items: flex-start;
        overflow-y: auto;
    }
-   
-   .modal-container {
+
+    .modal-container {
        grid-template-columns: 1fr;
        height: auto;
-       gap: 52px;
+       gap: 0;
        padding-top: 40px;
    }
    
    .modal-left {
+       background: #fbfaf7;
        height: 55vh;
        min-height: 280px;
    }
    
-   .modal-content {
-       max-height: 55vh;
-   }
    
    .modal-right {
+       background: #f1efea;
        width: 100%;
        height: auto;
        min-height: 300px;
