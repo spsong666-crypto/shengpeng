@@ -664,7 +664,7 @@ section {
 
 
 /* =========================================================
-   WHITE CUBE STYLE MODAL (白立方画廊级别标准弹窗界面)
+   WHITE CUBE STYLE MODAL (严格对标白立方官网：无固定外框、无多余文案)
 ========================================================= */
 
 .modal {
@@ -673,7 +673,7 @@ section {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(251, 250, 247, 0.96);
+    background: rgba(251, 250, 247, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 2000;
@@ -694,9 +694,7 @@ section {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
     position: relative;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    background: transparent; /* 取消外框容器的背景与实体边框 */
 }
 
 /* 左侧大图展示区 */
@@ -708,7 +706,6 @@ section {
     justify-content: center;
     position: relative;
     padding: 40px;
-    background: var(--bg);
 }
 
 /* 左上角放大镜图标按钮 (Zoom) */
@@ -783,7 +780,7 @@ section {
 .modal-year {
     font-size: 14px;
     color: var(--muted);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .enquire-btn {
@@ -815,7 +812,7 @@ section {
     margin-bottom: 25px;
 }
 
-/* 多图缩略图导航容器 */
+/* 多角度缩略图区 */
 .modal-thumbnails {
     display: flex;
     gap: 12px;
@@ -837,17 +834,13 @@ section {
     border-color: var(--text);
 }
 
-/* 底部 Share 分享与关闭控制区 */
+/* 底部纯净 Share 分享区 */
 .modal-bottom-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     border-top: 1px solid var(--line);
     padding-top: 18px;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
 }
 
 .share-btn {
@@ -858,6 +851,9 @@ section {
     display: flex;
     align-items: center;
     gap: 6px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     transition: color 0.2s ease;
 }
 
@@ -1039,7 +1035,6 @@ footer {
         gap: 8px;
     }
 
-    /* 移动端响应式面板 */
     .modal {
         padding: 10px;
         align-items: flex-start;
@@ -1049,7 +1044,6 @@ footer {
     .modal-container {
         grid-template-columns: 1fr;
         height: auto;
-        box-shadow: none;
     }
 
     .modal-left {
@@ -1862,693 +1856,4 @@ Studio light and workspace
     class="studio-item"
     onclick="openModal({
         artist: 'SHENGPENG SONG',
-        title: 'Studio Display',
-        year: '2026',
-        specs: 'Works displayed in the studio',
-        main: 'images/15.jpg'
-    })"
->
-
-<div class="img-container">
-
-<img
-    src="images/15.jpg"
-    alt="Works displayed in the studio"
-    loading="lazy"
-    decoding="async"
->
-
-</div>
-
-<div class="studio-caption">
-Works on display in studio
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section id="about">
-
-<div class="section-label">
-05 — About
-</div>
-
-
-<div class="about-layout">
-
-
-<div class="about-left">
-
-<div class="about-name">
-SHENGPENG SONG
-</div>
-
-Artist<br>
-Based in Germany<br>
-Painting
-
-</div>
-
-
-
-<div class="about-right">
-
-
-<p>
-
-SHENGPENG SONG is a Chinese artist based in Germany working primarily in painting. His recent practice moves from the human figure toward more open and narrative forms.
-
-</p>
-
-
-<p>
-
-His background includes studies in media and animation at the China Academy of Art, an MA in Oil Painting at the China Academy of Oil Painting in Beijing, and postgraduate study in Creative Arts at the University for the Creative Arts in the United Kingdom.
-
-</p>
-
-
-<p>
-
-His work has been presented in exhibitions and artist residencies in China, the United Kingdom and Germany, including a solo exhibition in Margate, UK, and artist residencies at the University for the Creative Arts and Alte Schule Hohenstein in Germany.
-
-</p>
-
-
-<p>
-
-Painting has gradually become the central language of his practice. While his earlier work focused strongly on faces and the human figure, his recent practice moves toward more open and narrative forms of painting.
-
-</p>
-
-
-<p>
-
-Rather than depicting a fixed subject, he is interested in what a figure can carry: memory, vulnerability, uncertainty, desire, conflict and moments of inner transformation.
-
-</p>
-
-
-<p>
-
-His current work explores the space between the visible and the inner world, allowing images to emerge through an intuitive process of painting.
-
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ARTIST STATEMENT
-===================================================== -->
-
-<section class="statement">
-
-<div class="section-label">
-06 — Artist Statement
-</div>
-
-
-<div class="statement-layout">
-
-
-<div>
-
-<h2 class="section-title">
-Artist Statement
-</h2>
-
-</div>
-
-
-
-<div class="statement-text">
-
-
-<p>
-
-In an era overburdened by hyper-information and collective anxiety, my practice is dedicated to building "subtractive sanctuaries" for the human spirit through a refined visual economy.
-</p>
-
-
-<p>
-
-Deeply informed by classical painting traditions and the Zen philosophy of inward realization, my work strips away explicit temporal markers, social labels, and narrative clutter. Focusing on minimalist portraiture and subtle, textured light, I capture closed-eyed figures in states of absolute stillness. These forms do not represent an escape from reality, but rather a quiet, introspective gaze that restores a sense of inner order.
-
-</p>
-
-
-<p>
-
-In terms of medium and painterly language, I bridge classical oil painting techniques with contemporary textural exploration. I am fascinated by the microscopic traces left by sweeping brushstrokes, the delicate transitions between low-saturation tonal blocks, and how oblique light animates the canvas surface. This approach—minimal from a distance, yet intensely deep upon closer inspection—transforms the painting into a "spatial container." It invites viewers to step into a protective boundary where they can freely project their emotions and find psychological reprieve.
-
-</p>
-
-
-<p>
-
-Rather than offering explicit moral instruction or rigid narrative, my work functions as a quiet vessel for human emotion. As external noise fades, leaving only light, texture, and breath, I aim to provide a contemplative space where the restless mind can settle into clarity and peace.
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CV / EXHIBITIONS
-===================================================== -->
-
-<section id="exhibitions">
-
-<div class="section-label">
-07 — Biography & Exhibitions
-</div>
-
-<h2 class="section-title">
-Education & Exhibitions
-</h2>
-
-
-
-<h3
-    style="
-        font-size:13px;
-        letter-spacing:0.12em;
-        text-transform:uppercase;
-        color:var(--muted);
-        margin-bottom:25px;
-    "
->
-Education
-</h3>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2014–2015
-</div>
-
-<div class="cv-title">
-MA in Creative Arts
-</div>
-
-<div class="cv-place">
-University for the Creative Arts (UCA), Canterbury, United Kingdom
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2013–2014
-</div>
-
-<div class="cv-title">
-Diploma in Art & Design
-</div>
-
-<div class="cv-place">
-University for the Creative Arts (UCA), Farnham, United Kingdom
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2011–2012
-</div>
-
-<div class="cv-title">
-MA in Oil Painting
-</div>
-
-<div class="cv-place">
-China Academy of Oil Painting, Beijing, China
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2007–2011
-</div>
-
-<div class="cv-title">
-BA in Media & Animation
-</div>
-
-<div class="cv-place">
-China Academy of Art, Hangzhou, China
-</div>
-
-</div>
-
-
-
-<h3
-    style="
-        font-size:13px;
-        letter-spacing:0.12em;
-        text-transform:uppercase;
-        color:var(--muted);
-        margin:50px 0 25px;
-    "
->
-Selected Exhibitions & Activities
-</h3>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2022
-</div>
-
-<div class="cv-title">
-Rafi Meunz & SHENGPENG SONG — Two-Person Exhibition
-</div>
-
-<div class="cv-place">
-Kulturbahnhof Hersbruck, Bavaria, Germany
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2017
-</div>
-
-<div class="cv-title">
-International Young Artists Exhibition — Group Exhibition
-</div>
-
-<div class="cv-place">
-Kunstmuseum Hersbruck, Bavaria, Germany
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2016
-</div>
-
-<div class="cv-title">
-Artist Residency
-</div>
-
-<div class="cv-place">
-Alte Schule Hohenstein, Hohenstein, Kirchensittenbach, Germany
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2015
-</div>
-
-<div class="cv-title">
-Artist Residency
-</div>
-
-<div class="cv-place">
-University for the Creative Arts, Canterbury, United Kingdom
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2015
-</div>
-
-<div class="cv-title">
-Power of Opportunity — Solo Exhibition
-</div>
-
-<div class="cv-place">
-Margate, United Kingdom
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2015
-</div>
-
-<div class="cv-title">
-Spaces in Between — Group Exhibition
-</div>
-
-<div class="cv-place">
-University for the Creative Arts, Folkestone, United Kingdom
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2013
-</div>
-
-<div class="cv-title">
-Seminar Presentation Exhibition — Group Exhibition
-</div>
-
-<div class="cv-place">
-China Academy of Oil Painting, Beijing, China
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2012
-</div>
-
-<div class="cv-title">
-Aowen Award (奥文奖学金)
-</div>
-
-<div class="cv-place">
-China Academy of Oil Painting, Beijing, China
-</div>
-
-<div class="cv-note">
-Institutional award established by the China Academy of Oil Painting
-</div>
-
-</div>
-
-
-
-<div class="cv-entry">
-
-<div class="cv-year">
-2009
-</div>
-
-<div class="cv-title">
-Stars of the Century — Group Exhibition
-</div>
-
-<div class="cv-place">
-China Academy of Art, Hangzhou, China
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    id="contact"
-    class="contact"
->
-
-<div class="section-label">
-08 — Contact
-</div>
-
-
-<div class="contact-layout">
-
-
-<div>
-
-<h2 class="section-title">
-Contact
-</h2>
-
-</div>
-
-
-
-<div>
-
-<a
-    href="mailto:spsong.art@gmail.com"
-    class="contact-email"
->
-spsong.art@gmail.com
-</a>
-
-
-<p class="contact-note">
-
-For gallery enquiries, exhibition opportunities, studio visits and professional collaborations, please get in touch by email.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     WHITE CUBE GALLERY STYLE MODAL (白立方画廊标准弹窗)
-===================================================== -->
-
-<div
-    class="modal"
-    id="imageModal"
-    onclick="if(event.target === this) closeModal()"
-    role="dialog"
-    aria-modal="true"
->
-    <div class="modal-container">
-        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
-        
-        <!-- 左侧大图展示区 (含 Zoom 按钮) -->
-        <div class="modal-left">
-            <button class="zoom-trigger-btn" onclick="triggerZoom()" title="Click to view full image">
-                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                Zoom
-            </button>
-            <img class="modal-content" id="modalImg" src="" alt="Enlarged artwork view">
-        </div>
-
-        <!-- 右侧浅灰色面板 (White Cube 标准排版) -->
-        <div class="modal-right">
-            <div class="modal-header-group">
-                <div class="modal-artist" id="modalArtist">SHENGPENG SONG</div>
-                <div class="modal-title-text" id="modalTitle">Untitled</div>
-                <div class="modal-year" id="modalYear">2026</div>
-
-                <a id="modalEnquireBtn" href="mailto:spsong.art@gmail.com?subject=Enquiry%20regarding%20Artwork" class="enquire-btn">Enquire</a>
-
-                <div class="modal-specs" id="modalSpecs">
-                    Acrylic on canvas<br>50 × 70 cm
-                </div>
-
-                <!-- 多角度缩略图区 -->
-                <div class="modal-thumbnails" id="modalThumbnails"></div>
-            </div>
-
-            <!-- 底部 Share 分享功能 -->
-            <div class="modal-bottom-actions">
-                <button class="share-btn" onclick="shareArtwork()">
-                    ✉ Share via Email
-                </button>
-                <div>White Cube Standard</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div>
-© SHENGPENG SONG
-</div>
-
-<div>
-Germany · Painting
-</div>
-
-</footer>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT SCRIPTS
-===================================================== -->
-
-<script>
-
-/* MOBILE MENU TOGGLE */
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
-const mobileLinks = document.querySelectorAll(".mobile-nav a");
-
-menuButton.addEventListener("click", function () {
-    const isOpen = mobileMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open", isOpen);
-    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-});
-
-mobileLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-        mobileMenu.classList.remove("open");
-        document.body.classList.remove("menu-open");
-        menuButton.setAttribute("aria-expanded", "false");
-    });
-});
-
-/* WHITE CUBE GALLERY MODAL SYSTEM */
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImg");
-const modalArtist = document.getElementById("modalArtist");
-const modalTitle = document.getElementById("modalTitle");
-const modalYear = document.getElementById("modalYear");
-const modalSpecs = document.getElementById("modalSpecs");
-const modalThumbnails = document.getElementById("modalThumbnails");
-const modalEnquireBtn = document.getElementById("modalEnquireBtn");
-
-let currentArtwork = null;
-
-function openModal(data) {
-    currentArtwork = data;
-    modal.classList.add("active");
-    document.body.classList.add("modal-open");
-    
-    modalArtist.textContent = data.artist || "SHENGPENG SONG";
-    modalTitle.textContent = data.title || "Untitled";
-    modalYear.textContent = data.year || "2026";
-    modalSpecs.innerHTML = data.specs || "";
-    
-    modalEnquireBtn.href = `mailto:spsong.art@gmail.com?subject=Enquiry%20-%20${encodeURIComponent(data.title || 'Artwork')}`;
-
-    modalImg.src = data.main;
-    modalThumbnails.innerHTML = "";
-
-    let thumbsArr = [];
-    if (data.main) thumbsArr.push({src: data.main, label: 'Main'});
-    if (data.detail) thumbsArr.push({src: data.detail, label: 'Detail'});
-    if (data.side) thumbsArr.push({src: data.side, label: 'Side'});
-
-    if (thumbsArr.length > 1) {
-        thumbsArr.forEach((item, index) => {
-            const thumbImg = document.createElement("img");
-            thumbImg.src = item.src;
-            thumbImg.className = "modal-thumb" + (index === 0 ? " active" : "");
-            thumbImg.alt = item.label;
-            thumbImg.onclick = function() {
-                modalImg.src = item.src;
-                document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
-                thumbImg.classList.add('active');
-            };
-            modalThumbnails.appendChild(thumbImg);
-        });
-    }
-}
-
-function triggerZoom() {
-    if (modalImg.src) {
-        window.open(modalImg.src, '_blank');
-    }
-}
-
-function shareArtwork() {
-    if (currentArtwork) {
-        const title = currentArtwork.title || 'Artwork';
-        const url = window.location.href;
-        window.location.href = `mailto:?subject=${encodeURIComponent('SHENGPENG SONG — ' + title)}&body=${encodeURIComponent('Check out this artwork by SHENGPENG SONG: ' + url)}`;
-    }
-}
-
-function closeModal() {
-    modal.classList.remove("active");
-    document.body.classList.remove("modal-open");
-    modalImg.src = "";
-    modalThumbnails.innerHTML = "";
-}
-
-/* ESCAPE KEY TO CLOSE MODAL */
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        closeModal();
-    }
-});
-
-</script>
-
-</body>
-</html>
+        title: 'Studio Display
