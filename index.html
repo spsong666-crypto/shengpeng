@@ -937,7 +937,31 @@ section {
 /* =========================================================
    SECOND MODAL — IMAGE ONLY (SECOND WINDOW)
 ========================================================= */
+/* The container holding the full-screen image needs to hide overflow when zoomed */
+.modal-image-container {
+     overflow: auto; /* Allows scrolling when the image becomes large */
+     max-width: 90vw;
+     max-height: 90vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
 
+/* The actual full-screen image */
+.modal-image-container img {
+     max-width: 100%;
+     max-height: 100%;
+     transition: transform 0.3s ease;
+     cursor: zoom-in;
+}
+
+/* State when the magnifier button is active */
+.modal-image-container img.zoomed {
+     transform: scale(2.5); /* Magnifies the image to 2.5x its size */
+     cursor: zoom-out;
+}
+
+   
 .image-only-modal {
     position: fixed;
     inset: 0;
