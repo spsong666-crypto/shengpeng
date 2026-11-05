@@ -413,30 +413,24 @@ section {
     opacity: 0.95;
 }
 
+/* Container for the text under the artwork */
 .work-info {
-    padding-top: 15px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
+     text-align: center;  /* Centers all text inside inline or block elements */
+     margin-top: 15px;    /* Optional: adds a clean gap between the image and the text */
+     width: 100%;         /* Ensures it spans the full width of the artwork card */
 }
 
+/* The Title (Directly under the card) */
 .work-title {
-    font-size: 13px;
-
-    font-weight: 500;
+     display: block;      /* Forces it to take up its own line */
+     font-weight: bold;   /* Optional: makes the title stand out */
+     margin-bottom: 4px;  /* Optional: small gap before the specs/year */
 }
 
+/* The Year and Specs (Directly under the title) */
 .work-meta {
-    font-size: 12px;
-
-    color: var(--muted);
-
-    text-align: right;
-
-    line-height: 1.5;
+     display: block;      /* Forces it onto a new line below the title */
+     color: #666;         /* Optional: subtle gray color for secondary info */
 }
 
 
@@ -1465,8 +1459,7 @@ Untitled
 </div>
 
 <div class="work-meta">
-Acrylic on canvas<br>
-50 × 70 cm · 2026
+2026
 </div>
 
 </div>
