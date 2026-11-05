@@ -937,17 +937,22 @@ section {
 /* =========================================================
    SECOND MODAL — IMAGE ONLY (SECOND WINDOW)
 ========================================================= */
-
+   
 .image-only-modal {
     position: fixed;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     background: rgba(20, 20, 20, 0.97);
+
     z-index: 2200;
+
     display: none;
     align-items: center;
     justify-content: center;
+
     padding: 40px;
     box-sizing: border-box;
 }
@@ -956,44 +961,31 @@ section {
     display: flex;
 }
 
-/* FIX: This wrapper container must manage the overflow scrollbars when zoomed */
-.modal-image-container {
-     overflow: auto; 
-     max-width: 94vw;
-     max-height: 90vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-}
+.image-only-content {
+    display: block;
 
-/* The actual full-screen image inside the wrapper */
-.modal-image-container img {
-     max-width: 100%;
-     max-height: 100%;
-     object-fit: contain;
-     transition: transform 0.3s ease;
-     cursor: zoom-in;
-     display: block; /* Prevents unwanted baseline spacing */
-}
+    width: auto;
+    height: auto;
 
-/* State when the magnifier button or image click is active */
-.modal-image-container img.zoomed {
-     transform: scale(2.5); /* Magnifies the image to 2.5x its size */
-     cursor: zoom-out;
+    max-width: 94vw;
+    max-height: 90vh;
+
+    object-fit: contain;
 }
 
 .image-only-close {
     position: absolute;
     top: 25px;
     right: 35px;
+
     border: none;
     background: transparent;
+
     color: white;
     font-size: 32px;
     cursor: pointer;
-    z-index: 2205; /* Nudged higher than the modal overlay background */
+    z-index: 2;
 }
-   
 
 /* =========================================================
    FOOTER
@@ -2901,51 +2893,44 @@ function closeModal() {
 /* =========================================================
    OPEN IMAGE-ONLY FULL-SCREEN MODAL
 ========================================================= */
+
 function openImageOnly(event) {
+
     // Prevent other click events
+
     event.stopPropagation();
+
 
     // Use the currently displayed image.
     // This also works if the visitor selected a detail
     // or side-view thumbnail.
+
     if (!modalImg.src) return;
 
     imageOnlyImg.src = modalImg.src;
+
     imageOnlyModal.classList.add("active");
+
+}
+
+
+/* =========================================================
+   CLOSE IMAGE-ONLY MODAL
+========================================================= */
+
+function closeImageOnly() {
+
+    imageOnlyModal.classList.remove("active");
+
+    imageOnlyImg.src = "";
+
+    // Do not close the artwork detail modal.
+    // The visitor returns to the same artwork.
+
 }
 
 
    
-/* =========================================================
-   CLOSE IMAGE-ONLY MODAL
-========================================================= */
-function closeImageOnly() {
-    imageOnlyModal.classList.remove("active");
-    
-    // RESET ZOOM: Ensure the next image opened doesn't start zoomed-in
-    imageOnlyImg.classList.remove("zoomed");
-    
-    imageOnlyImg.src = "";
-    // Do not close the artwork detail modal.
-    // The visitor returns to the same artwork.
-}
-
-/* =========================================================
-   TOGGLE ZOOM ON CLICK (IMAGE-ONLY MODAL)
-========================================================= */
-// Add an event listener to the image inside your full-screen window
-if (typeof imageOnlyImg !== 'undefined' && imageOnlyImg) {
-    imageOnlyImg.addEventListener("click", function(event) {
-        // Prevent clicking the image from triggering background close elements
-        event.stopPropagation();
-        
-        // Toggle the zoomed class we created in the CSS
-        this.classList.toggle("zoomed");
-    });
-}
-
-
-
 /* =========================================================
    SHARE — COPY DIRECT ARTWORK LINK
 ========================================================= */
