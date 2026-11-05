@@ -2901,41 +2901,49 @@ function closeModal() {
 /* =========================================================
    OPEN IMAGE-ONLY FULL-SCREEN MODAL
 ========================================================= */
-
 function openImageOnly(event) {
-
     // Prevent other click events
-
     event.stopPropagation();
-
 
     // Use the currently displayed image.
     // This also works if the visitor selected a detail
     // or side-view thumbnail.
-
     if (!modalImg.src) return;
 
     imageOnlyImg.src = modalImg.src;
-
     imageOnlyModal.classList.add("active");
-
 }
 
 
+   
 /* =========================================================
    CLOSE IMAGE-ONLY MODAL
 ========================================================= */
-
 function closeImageOnly() {
-
     imageOnlyModal.classList.remove("active");
-
+    
+    // RESET ZOOM: Ensure the next image opened doesn't start zoomed-in
+    imageOnlyImg.classList.remove("zoomed");
+    
     imageOnlyImg.src = "";
-
     // Do not close the artwork detail modal.
     // The visitor returns to the same artwork.
-
 }
+
+/* =========================================================
+   TOGGLE ZOOM ON CLICK (IMAGE-ONLY MODAL)
+========================================================= */
+// Add an event listener to the image inside your full-screen window
+if (typeof imageOnlyImg !== 'undefined' && imageOnlyImg) {
+    imageOnlyImg.addEventListener("click", function(event) {
+        // Prevent clicking the image from triggering background close elements
+        event.stopPropagation();
+        
+        // Toggle the zoomed class we created in the CSS
+        this.classList.toggle("zoomed");
+    });
+}
+
 
 
 /* =========================================================
