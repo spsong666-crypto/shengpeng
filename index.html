@@ -937,46 +937,17 @@ section {
 /* =========================================================
    SECOND MODAL — IMAGE ONLY (SECOND WINDOW)
 ========================================================= */
-/* The container holding the full-screen image needs to hide overflow when zoomed */
-.modal-image-container {
-     overflow: auto; /* Allows scrolling when the image becomes large */
-     max-width: 90vw;
-     max-height: 90vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-}
 
-/* The actual full-screen image */
-.modal-image-container img {
-     max-width: 100%;
-     max-height: 100%;
-     transition: transform 0.3s ease;
-     cursor: zoom-in;
-}
-
-/* State when the magnifier button is active */
-.modal-image-container img.zoomed {
-     transform: scale(2.5); /* Magnifies the image to 2.5x its size */
-     cursor: zoom-out;
-}
-
-   
 .image-only-modal {
     position: fixed;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     background: rgba(20, 20, 20, 0.97);
-
     z-index: 2200;
-
     display: none;
     align-items: center;
     justify-content: center;
-
     padding: 40px;
     box-sizing: border-box;
 }
@@ -985,31 +956,44 @@ section {
     display: flex;
 }
 
-.image-only-content {
-    display: block;
+/* FIX: This wrapper container must manage the overflow scrollbars when zoomed */
+.modal-image-container {
+     overflow: auto; 
+     max-width: 94vw;
+     max-height: 90vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
 
-    width: auto;
-    height: auto;
+/* The actual full-screen image inside the wrapper */
+.modal-image-container img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+     transition: transform 0.3s ease;
+     cursor: zoom-in;
+     display: block; /* Prevents unwanted baseline spacing */
+}
 
-    max-width: 94vw;
-    max-height: 90vh;
-
-    object-fit: contain;
+/* State when the magnifier button or image click is active */
+.modal-image-container img.zoomed {
+     transform: scale(2.5); /* Magnifies the image to 2.5x its size */
+     cursor: zoom-out;
 }
 
 .image-only-close {
     position: absolute;
     top: 25px;
     right: 35px;
-
     border: none;
     background: transparent;
-
     color: white;
     font-size: 32px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 2205; /* Nudged higher than the modal overlay background */
 }
+   
 
 /* =========================================================
    FOOTER
