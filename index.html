@@ -664,7 +664,7 @@ section {
 
 
 /* =========================================================
-   ARTWORK DETAIL MODAL — FULL SCREEN 70/30 SPLIT
+   ARTWORK DETAIL MODAL — FULL SCREEN 65/35 SPLIT
 ========================================================= */
 
 .modal {
@@ -752,8 +752,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 30px;
+   
+    font-size: 30px; /* High font-sizes cause descender issues */
+    line-height: 0;  /* FORCE THE SYMBOL TO CENTER MINUS TEXT BOUNDING BOXES */
+   
     cursor: pointer;
     z-index: 5;
 
