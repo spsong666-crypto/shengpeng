@@ -1,0 +1,1145 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Artwork catalog for images used in the website gallery. The archive directory is currently empty.",
+  "artworks": [
+    {
+      "title": "A Quiet Presence I",
+      "series": "A Quiet Presence",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "selected-works/4.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/4_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/4_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/4_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/A Quiet Presence_01/a_quiet_presence_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/A Quiet Presence_01/a_quiet_presence_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_01/a_quiet_presence_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_01/a_quiet_presence_01_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "A Quiet Presence II",
+      "series": "A Quiet Presence",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/3.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/3_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/3_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/3_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/A Quiet Presence_02/a_quiet_presence_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/A Quiet Presence_02/a_quiet_presence_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_02/a_quiet_presence_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_02/a_quiet_presence_02_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "A Quiet Presence III",
+      "series": "A Quiet Presence",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/A Quiet Presence_03/a_quiet_presence_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/A Quiet Presence_03/a_quiet_presence_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_03/a_quiet_presence_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_03/a_quiet_presence_03_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "A Quiet Presence IV",
+      "series": "A Quiet Presence",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/A Quiet Presence_04/a_quiet_presence_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/A Quiet Presence_04/a_quiet_presence_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_04/a_quiet_presence_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/A Quiet Presence_04/a_quiet_presence_04_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Among Us I",
+      "series": "Among Us",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "selected-works/10.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/10_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "selected-works/10_3_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/10_4_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/10_5_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/10_6_detail_3.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_5.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_01/among_us_01_6.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Among Us II",
+      "series": "Among Us",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Among Us_02/among_us_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Among Us_02/among_us_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_02/among_us_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_02/among_us_02_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_02/among_us_02_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Among Us III",
+      "series": "Among Us",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Among Us_03/among_us_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Among Us_03/among_us_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_03/among_us_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_03/among_us_03_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Among Us_03/among_us_03_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Detachment I",
+      "series": "Detachment",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/Detachment_01/detachment_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Detachment_01/detachment_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_01/detachment_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_01/detachment_01_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_01/detachment_01_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Detachment II",
+      "series": "Detachment",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/Detachment_02/detachment_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Detachment_02/detachment_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_02/detachment_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_02/detachment_02_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Detachment III",
+      "series": "Detachment",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/Detachment_03/detachment_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Detachment_03/detachment_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_03/detachment_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Detachment_03/detachment_03_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Embrace I",
+      "series": "Embrace",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/5.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/5_2_restored.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "selected-works/5_3_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/5_4_detail.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Embrace_01/embrace_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Embrace_01/embrace_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_01/embrace_01_3_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "series/Embrace_01/embrace_01_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Embrace II",
+      "series": "Embrace",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/6.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/6_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/6_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/6_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Embrace_02/embrace_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Embrace_02/embrace_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_02/embrace_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_02/embrace_02_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Embrace III",
+      "series": "Embrace",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Embrace_03/embrace_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Embrace_03/embrace_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_03/embrace_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_03/embrace_03_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_03/embrace_03_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Embrace IV",
+      "series": "Embrace",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Embrace_04/embrace_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Embrace_04/embrace_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_04/embrace_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_04/embrace_04_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Embrace_04/embrace_04_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Field of Rest I",
+      "series": "Field of Rest",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/7.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/7_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/7_3_detail.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Field of Rest_01/field_of_rest_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Field of Rest_01/field_of_rest_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_01/field_of_rest_01_3.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Field of Rest II",
+      "series": "Field of Rest",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/Field of Rest_02/field_of_rest_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Field of Rest_02/field_of_rest_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_02/field_of_rest_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_02/field_of_rest_02_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Field of Rest III",
+      "series": "Field of Rest",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/9.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/9_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/9_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/9_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Field of Rest_03/field_of_rest_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Field of Rest_03/field_of_rest_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_03/field_of_rest_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_03/field_of_rest_03_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Field of Rest IV",
+      "series": "Field of Rest",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "selected-works/8.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/8_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/8_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/8_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Field of Rest_04/field_of_rest_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Field of Rest_04/field_of_rest_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_04/field_of_rest_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_04/field_of_rest_04_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Field of Rest V",
+      "series": "Field of Rest",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Field of Rest_05/field_of_rest_05_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Field of Rest_05/field_of_rest_05_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_05/field_of_rest_05_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_05/field_of_rest_05_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Field of Rest_05/field_of_rest_05_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Looking Within I",
+      "series": "Looking Within",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 × 40 cm",
+      "images": [
+        {
+          "path": "selected-works/1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/1_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "selected-works/1_3_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/1_4_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/1_5_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Looking Within_01/looking_within_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Looking Within_01/looking_within_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_01/looking_within_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_01/looking_within_01_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_01/looking_within_01_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Looking Within II",
+      "series": "Looking Within",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Looking Within_02/looking_within_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Looking Within_02/looking_within_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_02/looking_within_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_02/looking_within_02_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Looking Within III",
+      "series": "Looking Within",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Looking Within_03/looking_within_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Looking Within_03/looking_within_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_03/looking_within_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_03/looking_within_03_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Looking Within IV",
+      "series": "Looking Within",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 50 cm",
+      "images": [
+        {
+          "path": "series/Looking Within_04/looking_within_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Looking Within_04/looking_within_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_04/looking_within_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Looking Within_04/looking_within_04_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness I",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "selected-works/12.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/12_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "selected-works/12_3 side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/12_4_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/12_5_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/12_6_detail_3.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_5.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_01/stillness_01_6.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness II",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Stillness_02/stillness_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_02/stillness_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_02/stillness_02_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_02/stillness_02_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_02/stillness_02_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness III",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Stillness_03/stillness_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_03/stillness_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_03/stillness_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_03/stillness_03_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_03/stillness_03_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness IV",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "selected-works/11.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/11_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/11_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/11_4_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/Stillness_04/stillness_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_04/stillness_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_04/stillness_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_04/stillness_04_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness V",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Stillness_05/stillness_05_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_05/stillness_05_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_05/stillness_05_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_05/stillness_05_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "Stillness VI",
+      "series": "Stillness",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/Stillness_06/stillness_06_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/Stillness_06/stillness_06_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_06/stillness_06_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_06/stillness_06_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/Stillness_06/stillness_06_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "The Claude Island I",
+      "series": "The Claude Island",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 × 50 cm",
+      "images": [
+        {
+          "path": "series/The Claude Island_01/the_claude_island_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Claude Island_01/the_claude_island_01_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Claude Island_01/the_claude_island_01_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Claude Island_01/the_claude_island_01_4.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "The Claude Island II",
+      "series": "The Claude Island",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 × 50 cm",
+      "images": [
+        {
+          "path": "series/The Claude Island_02/the_claude_island_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Claude Island_02/the_claude_island_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Claude Island_02/the_claude_island_02_3.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "The Shared Void I",
+      "series": "The Shared Void",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/The Shared Void_01/the_shared_void_01_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Shared Void_01/the_shared_void_01_2_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "series/The Shared Void_01/the_shared_void_01_3_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/The Shared Void_01/the_shared_void_01_4_detail_2.jpg",
+          "view": "detail"
+        }
+      ]
+    },
+    {
+      "title": "The Shared Void II",
+      "series": "The Shared Void",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/The Shared Void_02/the_shared_void_02_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Shared Void_02/the_shared_void_02_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_02/the_shared_void_02_3.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "The Shared Void III",
+      "series": "The Shared Void",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "selected-works/2.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "selected-works/2_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "selected-works/2_3_side.jpg",
+          "view": "side"
+        },
+        {
+          "path": "selected-works/2_4_detail_1.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "selected-works/2_5_detail_2.jpg",
+          "view": "detail"
+        },
+        {
+          "path": "series/The Shared Void_03/the_shared_void_03_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Shared Void_03/the_shared_void_03_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_03/the_shared_void_03_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_03/the_shared_void_03_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_03/the_shared_void_03_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "The Shared Void IV",
+      "series": "The Shared Void",
+      "year": 2026,
+      "medium": "Acrylic on Canvas",
+      "dimensions": "50 × 70 cm",
+      "images": [
+        {
+          "path": "series/The Shared Void_04/the_shared_void_04_1.jpg",
+          "view": "primary"
+        },
+        {
+          "path": "series/The Shared Void_04/the_shared_void_04_2.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_04/the_shared_void_04_3.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_04/the_shared_void_04_4.jpg",
+          "view": "alternate"
+        },
+        {
+          "path": "series/The Shared Void_04/the_shared_void_04_5.jpg",
+          "view": "alternate"
+        }
+      ]
+    }
+  ]
+}
