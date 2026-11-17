@@ -30,7 +30,7 @@
 /* Mobile artwork dialog: center the viewing stage in the first screen and keep horizontal gestures inside the gallery. */
 @media(max-width:800px){
  dialog#detail[open]{width:100%;max-width:none;height:100dvh;max-height:100dvh;margin:0;grid-template-columns:minmax(0,1fr);grid-template-rows:100dvh auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior-x:none}
- dialog#detail .detail-image{width:100%;min-width:0;height:100dvh;min-height:0;padding:max(60px,calc(env(safe-area-inset-top) + 48px)) 16px max(14px,env(safe-area-inset-bottom));display:grid;grid-template-rows:minmax(0,1fr) auto;align-content:stretch;gap:13px;overflow-x:hidden}
+ dialog#detail .detail-image{width:100%;min-width:0;height:100dvh;min-height:0;padding:max(60px,calc(env(safe-area-inset-top) + 48px)) 16px max(14px,env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center;gap:13px;overflow-x:hidden}
  dialog#detail .gallery-viewport{width:100%;max-width:100%;height:min(52dvh,520px);min-height:0;align-self:center}
  dialog#detail .gallery-controls{min-width:0;overflow:hidden}
  dialog#detail .gallery-controls .thumbs{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
