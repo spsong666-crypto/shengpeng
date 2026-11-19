@@ -1,0 +1,4 @@
+/* Anchor visual images to the bottom edge of their display frame site-wide. */
+.hero figure > img{object-position:center bottom!important}
+.card img,.thumbs img,.gallery-slide .large,.zoom-image{object-position:center bottom}
+.gallery-slide .zoom-trigger{align-items:end;justify-items:center}
