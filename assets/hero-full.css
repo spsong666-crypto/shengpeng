@@ -2,3 +2,7 @@ main .hero figure > img{display:block;width:100%;height:auto!important;min-heigh
 
 .home .top{padding:0;display:block}
 .home .top-inner{width:100%;max-width:var(--max);height:100%;margin-inline:auto;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between}
+
+.home .brand{font-size:18px;font-weight:500;letter-spacing:.11em;color:#403b35}
+@media(max-width:800px){.home .brand{font-size:17px;letter-spacing:.1em}}
+@media(max-width:480px){.home .brand{font-size:15px;letter-spacing:.09em}}
