@@ -1,0 +1,2 @@
+.home .top{padding:0;display:block}
+.home .top-inner{width:100%;max-width:var(--max);height:100%;margin-inline:auto;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between}
