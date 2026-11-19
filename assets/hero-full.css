@@ -1,1 +1,4 @@
 main .hero figure > img{display:block;width:100%;height:auto!important;min-height:0!important;max-height:none!important;object-fit:contain!important;object-position:center center!important}
+
+.home .top{padding:0;display:block}
+.home .top-inner{width:100%;max-width:var(--max);height:100%;margin-inline:auto;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between}
