@@ -1,5 +1,5 @@
 /* Use one horizontal anchor for the shared Header on every page. */
-.home .top-inner,.gallery .top-inner,.about .top-inner,.contact .top-inner{padding-inline:clamp(20px,4vw,56px)}
+.home .top-inner,.gallery .top-inner,.about .top-inner,.contact-page .top-inner{padding-inline:clamp(20px,4vw,56px)}
 
 /* Keep the Contact details aligned with that page's title instead of inset farther. */
-body.contact main > .contact{padding-inline:clamp(20px,6vw,90px)}
+body.contact-page main > .contact{padding-inline:clamp(20px,6vw,90px)}
