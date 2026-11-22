@@ -1,8 +1,8 @@
 ## Copyright & Usage
 
-© 2026 [Your Name]. All rights reserved.
+© 2026 Shengpeng Song. All rights reserved.
 
-All artworks, images, text, and website source code in this repository are the exclusive intellectual property of [Your Name]. 
+All artworks, images, text, and website source code in this repository are the exclusive intellectual property of Shengpeng Song. 
 
 * **No License Granted:** This repository is public solely for hosting purposes. No open-source license is granted.
 * **Prohibited Uses:** You may not copy, reproduce, distribute, modify, sell, or create derivative works from any artwork or code in this repository without prior written permission.
