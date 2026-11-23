@@ -78,3 +78,17 @@
  dialog#detail .detail-image{height:56dvh}
  dialog#detail .gallery-viewport{height:min(35dvh,280px);min-height:190px}
 }
+
+/* Slightly enlarge the mobile artwork stage to use more of the available screen. */
+@media(max-width:800px){
+ dialog#detail .detail-image{height:65dvh}
+ dialog#detail .gallery-viewport{height:min(43dvh,390px)}
+}
+@media(max-width:480px){
+ dialog#detail .detail-image{height:65dvh}
+ dialog#detail .gallery-viewport{height:min(42dvh,370px)}
+}
+@media(max-width:800px) and (max-height:700px){
+ dialog#detail .detail-image{height:62dvh}
+ dialog#detail .gallery-viewport{height:min(38dvh,300px)}
+}
