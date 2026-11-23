@@ -117,4 +117,4 @@
 }
 
 /* Slightly lower the mobile artwork stage background brightness. */
-@media(max-width:800px){dialog#detail .detail-image{background:#e8e5df}}
+@media(max-width:800px){dialog#detail .detail-image{background:#dedbd5}}
