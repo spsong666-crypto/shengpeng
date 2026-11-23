@@ -115,3 +115,6 @@
  .gallery-controls .gallery-count{position:absolute;right:0;top:50%;transform:translateY(-50%)}
  .detail-copy{text-align:center}
 }
+
+/* Slightly lower the mobile artwork stage background brightness. */
+@media(max-width:800px){dialog#detail .detail-image{background:#e8e5df}}
