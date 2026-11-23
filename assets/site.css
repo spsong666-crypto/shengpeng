@@ -62,3 +62,19 @@
  dialog#detail .gallery-viewport{height:min(32dvh,260px);min-height:180px}
  dialog#detail .detail-copy{padding-top:7px;padding-bottom:12px}
 }
+
+/* Balanced mobile artwork viewer sizing: larger image stage with room for the work details. */
+@media(max-width:800px){
+ dialog#detail .detail-image{height:58dvh;padding:max(52px,calc(env(safe-area-inset-top) + 44px)) 14px 12px;gap:10px}
+ dialog#detail .gallery-viewport{height:min(40dvh,370px);min-height:220px}
+ dialog#detail .gallery-controls .thumbs button{flex-basis:48px;width:48px;height:48px}
+}
+@media(max-width:480px){
+ dialog#detail .detail-image{height:58dvh;padding-left:12px;padding-right:12px}
+ dialog#detail .gallery-viewport{height:min(39dvh,340px);min-height:210px}
+ dialog#detail .gallery-controls .thumbs button{flex-basis:46px;width:46px;height:46px}
+}
+@media(max-width:800px) and (max-height:700px){
+ dialog#detail .detail-image{height:56dvh}
+ dialog#detail .gallery-viewport{height:min(35dvh,280px);min-height:190px}
+}
