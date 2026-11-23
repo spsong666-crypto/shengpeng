@@ -106,3 +106,9 @@
  dialog#detail .detail-image{height:66dvh}
  dialog#detail .gallery-viewport{height:min(40dvh,320px)}
 }
+
+
+/* Center the thumbnail strip beneath the main artwork; keep the image counter at the right. */
+.gallery-controls{position:relative;display:flex;justify-content:center}
+.gallery-controls .thumbs{flex:0 1 auto;width:max-content;max-width:calc(100% - 48px);margin-inline:auto;justify-content:flex-start}
+.gallery-controls .gallery-count{position:absolute;right:0;top:50%;transform:translateY(-50%)}
