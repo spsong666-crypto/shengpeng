@@ -108,11 +108,10 @@
 }
 
 
-/* Center the thumbnail strip beneath the main artwork; keep the image counter at the right. */
-.gallery-controls{position:relative;display:flex;justify-content:center}
-.gallery-controls .thumbs{flex:0 1 auto;width:max-content;max-width:calc(100% - 48px);margin-inline:auto;justify-content:flex-start}
-.gallery-controls .gallery-count{position:absolute;right:0;top:50%;transform:translateY(-50%)}
-
-
-/* Center artwork details beneath the gallery on desktop and mobile. */
-.detail-copy{text-align:center}
+/* Center gallery thumbnails and artwork information on mobile only. */
+@media(max-width:800px){
+ .gallery-controls{position:relative;display:flex;justify-content:center}
+ .gallery-controls .thumbs{flex:0 1 auto;width:max-content;max-width:calc(100% - 48px);margin-inline:auto;justify-content:flex-start}
+ .gallery-controls .gallery-count{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+ .detail-copy{text-align:center}
+}
